@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PokemonGameModelStoreContainer" CdmEntityContainer="PokemonGameEntities">
+    <EntitySetMapping Name="Challenges">
+      <EntityTypeMapping TypeName="PokemonGameModel.Challenges">
+        <MappingFragment StoreEntitySet="Challenges">
+          <ScalarProperty Name="challenge_id" ColumnName="challenge_id" />
+          <ScalarProperty Name="challenger_id" ColumnName="challenger_id" />
+          <ScalarProperty Name="challenged_id" ColumnName="challenged_id" />
+          <ScalarProperty Name="challenge_date" ColumnName="challenge_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medical_Attention">
+      <EntityTypeMapping TypeName="PokemonGameModel.Medical_Attention">
+        <MappingFragment StoreEntitySet="Medical_Attention">
+          <ScalarProperty Name="attention_id" ColumnName="attention_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="pokemon_id" ColumnName="pokemon_id" />
+          <ScalarProperty Name="request_date" ColumnName="request_date" />
+          <ScalarProperty Name="attention_date" ColumnName="attention_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="PokemonGameModel.Messages">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="message_id" ColumnName="message_id" />
+          <ScalarProperty Name="sender_id" ColumnName="sender_id" />
+          <ScalarProperty Name="receiver_id" ColumnName="receiver_id" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="sent_date" ColumnName="sent_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pokedex">
+      <EntityTypeMapping TypeName="PokemonGameModel.Pokedex">
+        <MappingFragment StoreEntitySet="Pokedex">
+          <ScalarProperty Name="pokedex_id" ColumnName="pokedex_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="pokemon_id" ColumnName="pokemon_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pokemon">
+      <EntityTypeMapping TypeName="PokemonGameModel.Pokemon">
+        <MappingFragment StoreEntitySet="Pokemon">
+          <ScalarProperty Name="img_url_enemy" ColumnName="img_url_enemy" />
+          <ScalarProperty Name="img_url_ally" ColumnName="img_url_ally" />
+          <ScalarProperty Name="pokemon_id" ColumnName="pokemon_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="weakness" ColumnName="weakness" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="evolves_from" ColumnName="evolves_from" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Team_Pokemon">
+      <EntityTypeMapping TypeName="PokemonGameModel.Team_Pokemon">
+        <MappingFragment StoreEntitySet="Team_Pokemon">
+          <ScalarProperty Name="team_pokemon_id" ColumnName="team_pokemon_id" />
+          <ScalarProperty Name="team_id" ColumnName="team_id" />
+          <ScalarProperty Name="pokemon_id" ColumnName="pokemon_id" />
+          <ScalarProperty Name="position" ColumnName="position" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teams">
+      <EntityTypeMapping TypeName="PokemonGameModel.Teams">
+        <MappingFragment StoreEntitySet="Teams">
+          <ScalarProperty Name="team_id" ColumnName="team_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="PokemonGameModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password_hash" ColumnName="password_hash" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

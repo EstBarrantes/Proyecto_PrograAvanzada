@@ -1,0 +1,723 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PokemonGameModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Challenges">
+          <Key>
+            <PropertyRef Name="challenge_id" />
+          </Key>
+          <Property Name="challenge_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="challenger_id" Type="int" />
+          <Property Name="challenged_id" Type="int" />
+          <Property Name="challenge_date" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Medical_Attention">
+          <Key>
+            <PropertyRef Name="attention_id" />
+          </Key>
+          <Property Name="attention_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="pokemon_id" Type="int" />
+          <Property Name="request_date" Type="datetime" />
+          <Property Name="attention_date" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="message_id" />
+          </Key>
+          <Property Name="message_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sender_id" Type="int" />
+          <Property Name="receiver_id" Type="int" />
+          <Property Name="content" Type="text" Nullable="false" />
+          <Property Name="sent_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Pokedex">
+          <Key>
+            <PropertyRef Name="pokedex_id" />
+          </Key>
+          <Property Name="pokedex_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="pokemon_id" Type="int" />
+          <Property Name="status" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pokemon">
+          <Key>
+            <PropertyRef Name="pokemon_id" />
+          </Key>
+          <Property Name="pokemon_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="weakness" Type="varchar" MaxLength="50" />
+          <Property Name="weight" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="number" Type="int" Nullable="false" />
+          <Property Name="evolves_from" Type="int" />
+          <Property Name="img_url_ally" Type="varchar" MaxLength="2048" Nullable="false" />
+          <Property Name="img_url_enemy" Type="varchar" MaxLength="2048" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Team_Pokemon">
+          <Key>
+            <PropertyRef Name="team_pokemon_id" />
+          </Key>
+          <Property Name="team_pokemon_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="team_id" Type="int" />
+          <Property Name="pokemon_id" Type="int" />
+          <Property Name="position" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Teams">
+          <Key>
+            <PropertyRef Name="team_id" />
+          </Key>
+          <Property Name="team_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password_hash" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="gender" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="role" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="registration_date" Type="date" />
+        </EntityType>
+        <Association Name="FK__Challenge__chall__1EA48E88">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Challenges" Type="Self.Challenges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Challenges">
+              <PropertyRef Name="challenger_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Challenge__chall__1F98B2C1">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Challenges" Type="Self.Challenges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Challenges">
+              <PropertyRef Name="challenged_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Medical_A__pokem__25518C17">
+          <End Role="Pokemon" Type="Self.Pokemon" Multiplicity="0..1" />
+          <End Role="Medical_Attention" Type="Self.Medical_Attention" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pokemon">
+              <PropertyRef Name="pokemon_id" />
+            </Principal>
+            <Dependent Role="Medical_Attention">
+              <PropertyRef Name="pokemon_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Medical_A__user___245D67DE">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Medical_Attention" Type="Self.Medical_Attention" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Medical_Attention">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Messages__receiv__1AD3FDA4">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="receiver_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Messages__sender__19DFD96B">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="sender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pokedex__pokemon__0F624AF8">
+          <End Role="Pokemon" Type="Self.Pokemon" Multiplicity="0..1" />
+          <End Role="Pokedex" Type="Self.Pokedex" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pokemon">
+              <PropertyRef Name="pokemon_id" />
+            </Principal>
+            <Dependent Role="Pokedex">
+              <PropertyRef Name="pokemon_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pokedex__user_id__0E6E26BF">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Pokedex" Type="Self.Pokedex" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Pokedex">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pokemon__evolves__0B91BA14">
+          <End Role="Pokemon" Type="Self.Pokemon" Multiplicity="0..1" />
+          <End Role="Pokemon1" Type="Self.Pokemon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pokemon">
+              <PropertyRef Name="pokemon_id" />
+            </Principal>
+            <Dependent Role="Pokemon1">
+              <PropertyRef Name="evolves_from" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Team_Poke__pokem__17036CC0">
+          <End Role="Pokemon" Type="Self.Pokemon" Multiplicity="0..1" />
+          <End Role="Team_Pokemon" Type="Self.Team_Pokemon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pokemon">
+              <PropertyRef Name="pokemon_id" />
+            </Principal>
+            <Dependent Role="Team_Pokemon">
+              <PropertyRef Name="pokemon_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Team_Poke__team___160F4887">
+          <End Role="Teams" Type="Self.Teams" Multiplicity="0..1" />
+          <End Role="Team_Pokemon" Type="Self.Team_Pokemon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teams">
+              <PropertyRef Name="team_id" />
+            </Principal>
+            <Dependent Role="Team_Pokemon">
+              <PropertyRef Name="team_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Teams__user_id__1332DBDC">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Teams" Type="Self.Teams" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Teams">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PokemonGameModelStoreContainer">
+          <EntitySet Name="Challenges" EntityType="Self.Challenges" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medical_Attention" EntityType="Self.Medical_Attention" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pokedex" EntityType="Self.Pokedex" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pokemon" EntityType="Self.Pokemon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Team_Pokemon" EntityType="Self.Team_Pokemon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teams" EntityType="Self.Teams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Challenge__chall__1EA48E88" Association="Self.FK__Challenge__chall__1EA48E88">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Challenges" EntitySet="Challenges" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Challenge__chall__1F98B2C1" Association="Self.FK__Challenge__chall__1F98B2C1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Challenges" EntitySet="Challenges" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Medical_A__pokem__25518C17" Association="Self.FK__Medical_A__pokem__25518C17">
+            <End Role="Pokemon" EntitySet="Pokemon" />
+            <End Role="Medical_Attention" EntitySet="Medical_Attention" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Medical_A__user___245D67DE" Association="Self.FK__Medical_A__user___245D67DE">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Medical_Attention" EntitySet="Medical_Attention" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Messages__receiv__1AD3FDA4" Association="Self.FK__Messages__receiv__1AD3FDA4">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Messages__sender__19DFD96B" Association="Self.FK__Messages__sender__19DFD96B">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pokedex__pokemon__0F624AF8" Association="Self.FK__Pokedex__pokemon__0F624AF8">
+            <End Role="Pokemon" EntitySet="Pokemon" />
+            <End Role="Pokedex" EntitySet="Pokedex" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pokedex__user_id__0E6E26BF" Association="Self.FK__Pokedex__user_id__0E6E26BF">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Pokedex" EntitySet="Pokedex" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pokemon__evolves__0B91BA14" Association="Self.FK__Pokemon__evolves__0B91BA14">
+            <End Role="Pokemon" EntitySet="Pokemon" />
+            <End Role="Pokemon1" EntitySet="Pokemon" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Team_Poke__pokem__17036CC0" Association="Self.FK__Team_Poke__pokem__17036CC0">
+            <End Role="Pokemon" EntitySet="Pokemon" />
+            <End Role="Team_Pokemon" EntitySet="Team_Pokemon" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Team_Poke__team___160F4887" Association="Self.FK__Team_Poke__team___160F4887">
+            <End Role="Teams" EntitySet="Teams" />
+            <End Role="Team_Pokemon" EntitySet="Team_Pokemon" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Teams__user_id__1332DBDC" Association="Self.FK__Teams__user_id__1332DBDC">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Teams" EntitySet="Teams" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PokemonGameModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Challenges">
+          <Key>
+            <PropertyRef Name="challenge_id" />
+          </Key>
+          <Property Name="challenge_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="challenger_id" Type="Int32" />
+          <Property Name="challenged_id" Type="Int32" />
+          <Property Name="challenge_date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Challenge__chall__5165187F" FromRole="Challenges" ToRole="Users" />
+          <NavigationProperty Name="Users1" Relationship="Self.FK__Challenge__chall__52593CB8" FromRole="Challenges" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Medical_Attention">
+          <Key>
+            <PropertyRef Name="attention_id" />
+          </Key>
+          <Property Name="attention_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="pokemon_id" Type="Int32" />
+          <Property Name="request_date" Type="DateTime" Precision="3" />
+          <Property Name="attention_date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Pokemon" Relationship="Self.FK__Medical_A__pokem__5812160E" FromRole="Medical_Attention" ToRole="Pokemon" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Medical_A__user___571DF1D5" FromRole="Medical_Attention" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="message_id" />
+          </Key>
+          <Property Name="message_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sender_id" Type="Int32" />
+          <Property Name="receiver_id" Type="Int32" />
+          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sent_date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Messages__receiv__4D94879B" FromRole="Messages" ToRole="Users" />
+          <NavigationProperty Name="Users1" Relationship="Self.FK__Messages__sender__4CA06362" FromRole="Messages" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Pokedex">
+          <Key>
+            <PropertyRef Name="pokedex_id" />
+          </Key>
+          <Property Name="pokedex_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="pokemon_id" Type="Int32" />
+          <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Pokemon" Relationship="Self.FK__Pokedex__pokemon__4222D4EF" FromRole="Pokedex" ToRole="Pokemon" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Pokedex__user_id__412EB0B6" FromRole="Pokedex" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Pokemon">
+          <Key>
+            <PropertyRef Name="pokemon_id" />
+          </Key>
+          <Property Name="pokemon_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="weakness" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="weight" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="number" Type="Int32" Nullable="false" />
+          <Property Name="evolves_from" Type="Int32" />
+          <NavigationProperty Name="Medical_Attention" Relationship="Self.FK__Medical_A__pokem__5812160E" FromRole="Pokemon" ToRole="Medical_Attention" />
+          <NavigationProperty Name="Pokedex" Relationship="Self.FK__Pokedex__pokemon__4222D4EF" FromRole="Pokemon" ToRole="Pokedex" />
+          <NavigationProperty Name="Pokemon1" Relationship="Self.FK__Pokemon__evolves__3E52440B" FromRole="Pokemon" ToRole="Pokemon1" />
+          <NavigationProperty Name="Pokemon2" Relationship="Self.FK__Pokemon__evolves__3E52440B" FromRole="Pokemon1" ToRole="Pokemon" />
+          <NavigationProperty Name="Team_Pokemon" Relationship="Self.FK__Team_Poke__pokem__49C3F6B7" FromRole="Pokemon" ToRole="Team_Pokemon" />
+          <Property Name="img_url_ally" Type="String" Nullable="false" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="img_url_enemy" Type="String" Nullable="false" MaxLength="2048" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Team_Pokemon">
+          <Key>
+            <PropertyRef Name="team_pokemon_id" />
+          </Key>
+          <Property Name="team_pokemon_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="team_id" Type="Int32" />
+          <Property Name="pokemon_id" Type="Int32" />
+          <Property Name="position" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pokemon" Relationship="Self.FK__Team_Poke__pokem__49C3F6B7" FromRole="Team_Pokemon" ToRole="Pokemon" />
+          <NavigationProperty Name="Teams" Relationship="Self.FK__Team_Poke__team___48CFD27E" FromRole="Team_Pokemon" ToRole="Teams" />
+        </EntityType>
+        <EntityType Name="Teams">
+          <Key>
+            <PropertyRef Name="team_id" />
+          </Key>
+          <Property Name="team_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" />
+          <NavigationProperty Name="Team_Pokemon" Relationship="Self.FK__Team_Poke__team___48CFD27E" FromRole="Teams" ToRole="Team_Pokemon" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Teams__user_id__45F365D3" FromRole="Teams" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password_hash" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="role" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="registration_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Challenges" Relationship="Self.FK__Challenge__chall__5165187F" FromRole="Users" ToRole="Challenges" />
+          <NavigationProperty Name="Challenges1" Relationship="Self.FK__Challenge__chall__52593CB8" FromRole="Users" ToRole="Challenges" />
+          <NavigationProperty Name="Medical_Attention" Relationship="Self.FK__Medical_A__user___571DF1D5" FromRole="Users" ToRole="Medical_Attention" />
+          <NavigationProperty Name="Messages" Relationship="Self.FK__Messages__receiv__4D94879B" FromRole="Users" ToRole="Messages" />
+          <NavigationProperty Name="Messages1" Relationship="Self.FK__Messages__sender__4CA06362" FromRole="Users" ToRole="Messages" />
+          <NavigationProperty Name="Pokedex" Relationship="Self.FK__Pokedex__user_id__412EB0B6" FromRole="Users" ToRole="Pokedex" />
+          <NavigationProperty Name="Teams" Relationship="Self.FK__Teams__user_id__45F365D3" FromRole="Users" ToRole="Teams" />
+          <Property Name="gender" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK__Challenge__chall__5165187F">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Challenges" Type="Self.Challenges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Challenges">
+              <PropertyRef Name="challenger_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Challenge__chall__52593CB8">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Challenges" Type="Self.Challenges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Challenges">
+              <PropertyRef Name="challenged_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Medical_A__pokem__5812160E">
+          <End Role="Pokemon" Type="Self.Pokemon" Multiplicity="0..1" />
+          <End Role="Medical_Attention" Type="Self.Medical_Attention" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pokemon">
+              <PropertyRef Name="pokemon_id" />
+            </Principal>
+            <Dependent Role="Medical_Attention">
+              <PropertyRef Name="pokemon_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Medical_A__user___571DF1D5">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Medical_Attention" Type="Self.Medical_Attention" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Medical_Attention">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Messages__receiv__4D94879B">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="receiver_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Messages__sender__4CA06362">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="sender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pokedex__pokemon__4222D4EF">
+          <End Role="Pokemon" Type="Self.Pokemon" Multiplicity="0..1" />
+          <End Role="Pokedex" Type="Self.Pokedex" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pokemon">
+              <PropertyRef Name="pokemon_id" />
+            </Principal>
+            <Dependent Role="Pokedex">
+              <PropertyRef Name="pokemon_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pokedex__user_id__412EB0B6">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Pokedex" Type="Self.Pokedex" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Pokedex">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pokemon__evolves__3E52440B">
+          <End Role="Pokemon" Type="Self.Pokemon" Multiplicity="0..1" />
+          <End Role="Pokemon1" Type="Self.Pokemon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pokemon">
+              <PropertyRef Name="pokemon_id" />
+            </Principal>
+            <Dependent Role="Pokemon1">
+              <PropertyRef Name="evolves_from" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Team_Poke__pokem__49C3F6B7">
+          <End Role="Pokemon" Type="Self.Pokemon" Multiplicity="0..1" />
+          <End Role="Team_Pokemon" Type="Self.Team_Pokemon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pokemon">
+              <PropertyRef Name="pokemon_id" />
+            </Principal>
+            <Dependent Role="Team_Pokemon">
+              <PropertyRef Name="pokemon_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Team_Poke__team___48CFD27E">
+          <End Role="Teams" Type="Self.Teams" Multiplicity="0..1" />
+          <End Role="Team_Pokemon" Type="Self.Team_Pokemon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teams">
+              <PropertyRef Name="team_id" />
+            </Principal>
+            <Dependent Role="Team_Pokemon">
+              <PropertyRef Name="team_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Teams__user_id__45F365D3">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Teams" Type="Self.Teams" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Teams">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PokemonGameEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Challenges" EntityType="Self.Challenges" />
+          <EntitySet Name="Medical_Attention" EntityType="Self.Medical_Attention" />
+          <EntitySet Name="Messages" EntityType="Self.Messages" />
+          <EntitySet Name="Pokedex" EntityType="Self.Pokedex" />
+          <EntitySet Name="Pokemon" EntityType="Self.Pokemon" />
+          <EntitySet Name="Team_Pokemon" EntityType="Self.Team_Pokemon" />
+          <EntitySet Name="Teams" EntityType="Self.Teams" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <AssociationSet Name="FK__Challenge__chall__5165187F" Association="Self.FK__Challenge__chall__5165187F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Challenges" EntitySet="Challenges" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Challenge__chall__52593CB8" Association="Self.FK__Challenge__chall__52593CB8">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Challenges" EntitySet="Challenges" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Medical_A__pokem__5812160E" Association="Self.FK__Medical_A__pokem__5812160E">
+            <End Role="Pokemon" EntitySet="Pokemon" />
+            <End Role="Medical_Attention" EntitySet="Medical_Attention" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Medical_A__user___571DF1D5" Association="Self.FK__Medical_A__user___571DF1D5">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Medical_Attention" EntitySet="Medical_Attention" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Messages__receiv__4D94879B" Association="Self.FK__Messages__receiv__4D94879B">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Messages__sender__4CA06362" Association="Self.FK__Messages__sender__4CA06362">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pokedex__pokemon__4222D4EF" Association="Self.FK__Pokedex__pokemon__4222D4EF">
+            <End Role="Pokemon" EntitySet="Pokemon" />
+            <End Role="Pokedex" EntitySet="Pokedex" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pokedex__user_id__412EB0B6" Association="Self.FK__Pokedex__user_id__412EB0B6">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Pokedex" EntitySet="Pokedex" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pokemon__evolves__3E52440B" Association="Self.FK__Pokemon__evolves__3E52440B">
+            <End Role="Pokemon" EntitySet="Pokemon" />
+            <End Role="Pokemon1" EntitySet="Pokemon" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Team_Poke__pokem__49C3F6B7" Association="Self.FK__Team_Poke__pokem__49C3F6B7">
+            <End Role="Pokemon" EntitySet="Pokemon" />
+            <End Role="Team_Pokemon" EntitySet="Team_Pokemon" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Team_Poke__team___48CFD27E" Association="Self.FK__Team_Poke__team___48CFD27E">
+            <End Role="Teams" EntitySet="Teams" />
+            <End Role="Team_Pokemon" EntitySet="Team_Pokemon" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Teams__user_id__45F365D3" Association="Self.FK__Teams__user_id__45F365D3">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Teams" EntitySet="Teams" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PokemonGameModelStoreContainer" CdmEntityContainer="PokemonGameEntities">
+          <EntitySetMapping Name="Challenges">
+            <EntityTypeMapping TypeName="PokemonGameModel.Challenges">
+              <MappingFragment StoreEntitySet="Challenges">
+                <ScalarProperty Name="challenge_id" ColumnName="challenge_id" />
+                <ScalarProperty Name="challenger_id" ColumnName="challenger_id" />
+                <ScalarProperty Name="challenged_id" ColumnName="challenged_id" />
+                <ScalarProperty Name="challenge_date" ColumnName="challenge_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medical_Attention">
+            <EntityTypeMapping TypeName="PokemonGameModel.Medical_Attention">
+              <MappingFragment StoreEntitySet="Medical_Attention">
+                <ScalarProperty Name="attention_id" ColumnName="attention_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="pokemon_id" ColumnName="pokemon_id" />
+                <ScalarProperty Name="request_date" ColumnName="request_date" />
+                <ScalarProperty Name="attention_date" ColumnName="attention_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="PokemonGameModel.Messages">
+              <MappingFragment StoreEntitySet="Messages">
+                <ScalarProperty Name="message_id" ColumnName="message_id" />
+                <ScalarProperty Name="sender_id" ColumnName="sender_id" />
+                <ScalarProperty Name="receiver_id" ColumnName="receiver_id" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="sent_date" ColumnName="sent_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pokedex">
+            <EntityTypeMapping TypeName="PokemonGameModel.Pokedex">
+              <MappingFragment StoreEntitySet="Pokedex">
+                <ScalarProperty Name="pokedex_id" ColumnName="pokedex_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="pokemon_id" ColumnName="pokemon_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pokemon">
+            <EntityTypeMapping TypeName="PokemonGameModel.Pokemon">
+              <MappingFragment StoreEntitySet="Pokemon">
+                <ScalarProperty Name="img_url_enemy" ColumnName="img_url_enemy" />
+                <ScalarProperty Name="img_url_ally" ColumnName="img_url_ally" />
+                <ScalarProperty Name="pokemon_id" ColumnName="pokemon_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="weakness" ColumnName="weakness" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="evolves_from" ColumnName="evolves_from" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Team_Pokemon">
+            <EntityTypeMapping TypeName="PokemonGameModel.Team_Pokemon">
+              <MappingFragment StoreEntitySet="Team_Pokemon">
+                <ScalarProperty Name="team_pokemon_id" ColumnName="team_pokemon_id" />
+                <ScalarProperty Name="team_id" ColumnName="team_id" />
+                <ScalarProperty Name="pokemon_id" ColumnName="pokemon_id" />
+                <ScalarProperty Name="position" ColumnName="position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teams">
+            <EntityTypeMapping TypeName="PokemonGameModel.Teams">
+              <MappingFragment StoreEntitySet="Teams">
+                <ScalarProperty Name="team_id" ColumnName="team_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="PokemonGameModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password_hash" ColumnName="password_hash" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
