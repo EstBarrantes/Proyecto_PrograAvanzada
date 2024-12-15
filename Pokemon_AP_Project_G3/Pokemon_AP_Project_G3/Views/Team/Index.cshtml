@@ -1,6 +1,7 @@
 ﻿@using Pokemon_AP_Project_G3.Controllers
 @{
     ViewBag.Title = "Team Builder";
+    int teamIndex = 1;
 }
 @model TeamViewModel
 
@@ -13,18 +14,19 @@
                 {
                     <div class="mb-3 p-3 shadow bg-white rounded">
                         <div class="d-flex align-items-center">
-                            <span class="fw-bold me-3">Team @team.TeamId</span>
+                            <span class="fw-bold me-3">Team @teamIndex</span>
                             <div class="d-flex">
                                 @foreach (var pokemon in team.TeamPokemons)
                                 {
                                     <img src="@pokemon.img_url_enemy" alt="@pokemon.name" class="img-thumbnail me-2" style="width: 50px; height: 50px;">
                                 }
                             </div>
-                            <button class="btn btn-sm btn-primary ms-auto" data-bs-toggle="modal" data-bs-target="#teamModal" style="width: 50px; height: 50px;">
+                            <button class="btn btn-sm btn-primary ms-auto edit-team-button" data-bs-toggle="modal" data-bs-target="#teamModal" data-team-id="@team.TeamId" data-team-index="@teamIndex" data-team-pokemons="@string.Join(",", team.TeamPokemons.Select(p => p.pokemon_id))" style="width: 50px; height: 50px;">
                                 Edit
                             </button>
                         </div>
                     </div>
+                    teamIndex++;
                 }
                 @if (Model.Teams.Count < 3)
                 {
@@ -110,6 +112,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-5">
+                        <input type="hidden" id="teamId" value="0">
                         <div class="row">
                             <div class="col-2 mb-3 poke-item">
                                 <img src="https://img.pokemondb.net/sprites/items/poke-ball.png" alt="Pokeball" class="img-thumbnail pokeball" id="pokemon1">
@@ -253,12 +256,62 @@
                 }
             });
 
+            //Edit team
+            $('#teamModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); 
+                var modal = $(this);
+
+                if (button.hasClass('edit-team-button')) {
+                    var teamId = button.data('team-id');
+                    $("#teamId").val(teamId);
+                    var teamPokemons = button.data('team-pokemons').toString().split(',');
+
+                    selectedPokemonsTeam = teamPokemons.map(Number);
+                    for (let i = 0; i < 6; i++) {
+                        let pokeBall = $(`#pokemon${i + 1}`);
+                        if (selectedPokemonsTeam[i]) {
+                            $.ajax({
+                                url: '/Team/GetPokemonImgUrl',
+                                method: 'GET',
+                                data: { pokemonId: selectedPokemonsTeam[i] },
+                                dataType: 'json',
+                                success: function (data) {
+                                    if (data.success) {
+                                        pokeBall.attr("src", data.img_url_enemy);
+                                    } else {
+                                        console.log("Error en la respuesta:", data.message);
+                                    }
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {
+                                    console.log("Error en AJAX:", textStatus, errorThrown);
+                                }
+                            });
+                        } else {
+                            pokeBall.attr("src", "https://img.pokemondb.net/sprites/items/poke-ball.png");
+                        }
+                    }
+
+                    modal.find('.modal-title').text(`Edit Team ${button.data('team-index')}`);
+                } else {
+                    selectedPokemonsTeam = [];
+                    $("#teamId").val("0");
+                    for (let i = 0; i < 6; i++) {
+                        $(`#pokemon${i + 1}`).attr("src", "https://img.pokemondb.net/sprites/items/poke-ball.png");
+                    }
+                    modal.find('.modal-title').text('Create New Team');
+                }
+            });
+
             $("#saveTeamBtn").click(function () {
                 if (selectedPokemonsTeam.length === 6) {
+                    var teamId = $("#teamId").val();
                     $.ajax({
-                        url: '/Team/AddNewTeam',
+                        url: '/Team/AddEditTeam',
                         method: 'POST',
-                        data: { pokemonIds: selectedPokemonsTeam },
+                        data: {
+                            pokemonIds: selectedPokemonsTeam,
+                            teamId: teamId
+                        },
                         success: function (response) {
                             if (response.success) {
                                 $('#teamModal').modal('hide');

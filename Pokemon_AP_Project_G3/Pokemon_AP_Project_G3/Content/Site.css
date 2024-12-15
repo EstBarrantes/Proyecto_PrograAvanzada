@@ -18,3 +18,26 @@ select,
 textarea {
     max-width: 280px;
 }
+
+body {
+    background-image: url('https://wallpapers.com/images/hd/pikachu-4k-and-pokemon-cousins-field-trip-03fs1oq9pudixw79.jpg');
+    margin: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.body-content {
+    border-radius: 25px;
+    background-color: #ffffffcc !important;
+}
+
+footer{
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    width: 100% !important;
+    z-index: 10;
+    background-color: white !important;
+}

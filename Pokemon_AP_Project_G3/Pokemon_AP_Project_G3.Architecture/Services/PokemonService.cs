@@ -11,6 +11,8 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
 {
     public interface IPokemonService
     {
+
+        //Team Builder
         Task<BaseResponse<TeamQuery>> GetTeamsByUserId(int pUserId);
         Task<BaseResponse<PokedexQuery>> GetPokedexByUserId(int pUserId);
         Task<BaseResponse<Pokemon>> GetPokemonsNotOwned(int pUserId);
@@ -19,22 +21,29 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
         Task<BaseResponse<Pokemon>> GetPokemon(int pPokemonId);
         Task<BaseResponse> AddNewTeam(List<int> pokemons, int pUserId);
 
+        //Pokedex
+        Task<BaseResponse<Pokemon>> GetAllPokemons();
+        Task<BaseResponse<Pokemon>> GetAllPokemonsFiltered(string pName = null, string pType = null, string pWeight = null);
+
     }
 
     public class PokemonService: IPokemonService
     {
-        private readonly ITeamRepository  _repository;
+        private readonly ITeamRepository  _repositoryTeam;
+        private readonly IPokedexRepository _repositoryPokedex;
         public PokemonService()
         {
-            _repository = new TeamRepository();
+            _repositoryTeam = new TeamRepository();
+            _repositoryPokedex = new PokedexRepository();
         }
 
+        #region Team Builder
         public async Task<BaseResponse<TeamQuery>> GetTeamsByUserId(int pUserId)
         {
             var res = new BaseResponse<TeamQuery>();
             try
             {
-                res = await _repository.GetTeamsByUserId(pUserId);
+                res = await _repositoryTeam.GetTeamsByUserId(pUserId);
             }
             catch(Exception ex)
             {
@@ -50,7 +59,7 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             var res = new BaseResponse<PokedexQuery>();
             try
             {
-                res = await _repository.GetPokedexByUserId(pUserId);
+                res = await _repositoryTeam.GetPokedexByUserId(pUserId);
             }
             catch (Exception ex)
             {
@@ -66,7 +75,7 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             var res = new BaseResponse<Pokemon>();
             try
             {
-                res = await _repository.GetPokemonsNotOwned(pUserId);
+                res = await _repositoryTeam.GetPokemonsNotOwned(pUserId);
             }
             catch (Exception ex)
             {
@@ -82,7 +91,7 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             var res = new BaseResponse();
             try
             {
-                res = await _repository.AddPokemonsToPokedex(pokemons,pUserId);
+                res = await _repositoryTeam.AddPokemonsToPokedex(pokemons,pUserId);
             }
             catch (Exception ex)
             {
@@ -97,7 +106,7 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             var res = new BaseResponse();
             try
             {
-                res = await _repository.DeletePokemonsToPokedex(pokemon, pUserId);
+                res = await _repositoryTeam.DeletePokemonsToPokedex(pokemon, pUserId);
             }
             catch (Exception ex)
             {
@@ -112,7 +121,7 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             var res = new BaseResponse<Pokemon>();
             try
             {
-                res = await _repository.GetPokemon(pPokemonId);
+                res = await _repositoryTeam.GetPokemon(pPokemonId);
             }
             catch (Exception ex)
             {
@@ -128,7 +137,7 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             var res = new BaseResponse();
             try
             {
-                res = await _repository.AddNewTeam(pokemons, pUserId);
+                res = await _repositoryTeam.AddNewTeam(pokemons, pUserId);
             }
             catch (Exception ex)
             {
@@ -137,5 +146,41 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             }
             return res;
         }
+
+        #endregion
+
+        #region Pokedex
+        public async Task<BaseResponse<Pokemon>> GetAllPokemons()
+        {
+            var res = new BaseResponse<Pokemon>();
+            try
+            {
+                res = await _repositoryPokedex.GetAllPokemons();
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - Service";
+                res.Success = false;
+                res.List = new List<Pokemon>();
+            }
+            return res;
+        }
+
+        public async Task<BaseResponse<Pokemon>> GetAllPokemonsFiltered(string pName = null, string pType = null, string pWeight = null)
+        {
+            var res = new BaseResponse<Pokemon>();
+            try
+            {
+                res = await _repositoryPokedex.GetAllPokemonsFiltered(pName,pType,pWeight);
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - Service";
+                res.Success = false;
+                res.List = new List<Pokemon>();
+            }
+            return res;
+        }
+        #endregion
     }
 }

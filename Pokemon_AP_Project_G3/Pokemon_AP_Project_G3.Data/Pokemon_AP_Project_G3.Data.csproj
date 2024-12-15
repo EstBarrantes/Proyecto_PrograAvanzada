@@ -89,6 +89,7 @@
       <DependentUpon>Pokemon_APP_ADO.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\PokedexRepository.cs" />
     <Compile Include="Repository\TeamRepository.cs" />
     <Compile Include="Teams.cs">
       <DependentUpon>Pokemon_APP_ADO.tt</DependentUpon>

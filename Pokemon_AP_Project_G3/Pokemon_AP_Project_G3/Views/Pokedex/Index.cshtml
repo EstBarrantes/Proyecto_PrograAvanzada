@@ -1,0 +1,112 @@
+﻿@using Pokemon_AP_Project_G3.Controllers
+@{
+    ViewBag.Title = "Pokedex";
+}
+@model PokedexViewModel
+
+<main class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="mb-3">Pokedex</h3>
+            <form action="/Pokedex/FilterPokedex" method="post" class="mb-3">
+                <div class="row">
+                    <div class="col-md-3 mb-2">
+                        <input type="text" name="name" class="form-control" placeholder="Name" />
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <select name="type" class="form-control">
+                            <option value="">Select Type</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Fire">Fire</option>
+                            <option value="Water">Water</option>
+                            <option value="Electric">Electric</option>
+                            <option value="Grass">Grass</option>
+                            <option value="Ice">Ice</option>
+                            <option value="Fighting">Fighting</option>
+                            <option value="Poison">Poison</option>
+                            <option value="Ground">Ground</option>
+                            <option value="Flying">Flying</option>
+                            <option value="Psychic">Psychic</option>
+                            <option value="Bug">Bug</option>
+                            <option value="Rock">Rock</option>
+                            <option value="Ghost">Ghost</option>
+                            <option value="Dark">Dark</option>
+                            <option value="Dragon">Dragon</option>
+                            <option value="Steel">Steel</option>
+                            <option value="Fairy">Fairy</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <input type="text" id="weight" name="weight" class="form-control" placeholder="Weight (kg)" onkeyup="formatoNumeros2(this);" onkeydown="ValidarNumeros(event);" />
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <button type="submit" class="btn btn-primary">Filter</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="overflow-auto" style="max-height: 600px; overflow-x: hidden !important;">
+                <div class="row">
+                    @foreach (var pokedexEntry in Model.Pokemons)
+                    {
+                        <div class="col-12 mb-3">
+                            <div class="p-3 shadow rounded d-flex" style="background-color: #ffffff">
+                                <div class="d-flex align-items-center">
+                                    <img src="@pokedexEntry.img_url_enemy" alt="@pokedexEntry.name" class="img-thumbnail me-3" style="width: 50px; height: 50px;">
+                                    <div>
+                                        <h5 class="m-0">@pokedexEntry.name</h5>
+                                        <small class="text-muted">Weight: @pokedexEntry.weight kg | Type: @pokedexEntry.type</small>
+                                    </div>
+                                </div>
+                                <span class="fw-bold ms-auto align-self-end">ID @pokedexEntry.pokemon_id</span>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+@section Scripts {
+    <script>
+        function formatoNumeros2(element) {
+            let text = $(element).val();
+            let cleanedText = text.replace(/[^0-9.]+/g, '');
+            let parts = cleanedText.split('.');
+            let integerPart = parts[0];
+            let decimalPart = parts[1] || '';
+            let hasDot = false;
+
+            if (cleanedText.endsWith('.')) {
+                hasDot = true;
+            }
+
+            if (hasDot) {
+                let formattedIntegerPart = parseFloat(integerPart).toLocaleString('en-US');
+                let formattedValue = formattedIntegerPart + '.';
+                $(element).val(formattedValue);
+            } else {
+                let formattedIntegerPart = parseFloat(integerPart).toLocaleString('en-US');
+
+                let formattedValue = formattedIntegerPart;
+
+                if (decimalPart !== '') {
+                    formattedValue += '.' + decimalPart.slice(0, 2);
+                }
+
+                $(element).val(formattedValue);
+            }
+        }
+
+        function ValidarNumeros(evt) {
+            evt = (evt) ? evt : window.event;
+            let charCode = (evt.which) ? evt.which : evt.keyCode;
+            if ((charCode > 31 && (charCode < 48 || charCode > 57)) && charCode !== 46 && (charCode < 96 || charCode > 105) && charCode !== 116 && charCode !== 123 && charCode !== 190 && charCode !== 110) {
+                evt.preventDefault();
+            } else {
+                return true;
+            }
+        }
+    </script>
+}

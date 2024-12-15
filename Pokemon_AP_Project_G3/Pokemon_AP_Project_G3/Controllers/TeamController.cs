@@ -114,7 +114,7 @@ namespace Pokemon_AP_Project_G3.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddNewTeam(List<int> pokemonIds)
+        public async Task<ActionResult> AddEditTeam(List<int> pokemonIds,int teamId)
         {
             if (pokemonIds.Count != 6)
             {
