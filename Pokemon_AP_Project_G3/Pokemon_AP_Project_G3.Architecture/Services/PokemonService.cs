@@ -19,7 +19,7 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
         Task<BaseResponse> AddPokemonsToPokedex(List<int> pokemons, int pUserId);
         Task<BaseResponse> DeletePokemonsToPokedex(int pokemon, int pUserId);
         Task<BaseResponse<Pokemon>> GetPokemon(int pPokemonId);
-        Task<BaseResponse> AddNewTeam(List<int> pokemons, int pUserId);
+        Task<BaseResponse> AddEditTeam(List<int> pokemons, int pUserId, int pTeamId);
 
         //Pokedex
         Task<BaseResponse<Pokemon>> GetAllPokemons();
@@ -132,12 +132,12 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             return res;
         }
 
-        public async Task<BaseResponse> AddNewTeam(List<int> pokemons, int pUserId)
+        public async Task<BaseResponse> AddEditTeam(List<int> pokemons, int pUserId, int pTeamId)
         {
             var res = new BaseResponse();
             try
             {
-                res = await _repositoryTeam.AddNewTeam(pokemons, pUserId);
+                res = await _repositoryTeam.AddEditTeam(pokemons, pUserId, pTeamId);
             }
             catch (Exception ex)
             {

@@ -121,7 +121,7 @@ namespace Pokemon_AP_Project_G3.Controllers
                 return Json(new { success = false, message = "El equipo debe tener exactamente 6 Pokémon." });
             }
 
-            var res = await _service.AddNewTeam(pokemonIds, 1);
+            var res = await _service.AddEditTeam(pokemonIds, 1, teamId);
 
             if (res.Success)
             {

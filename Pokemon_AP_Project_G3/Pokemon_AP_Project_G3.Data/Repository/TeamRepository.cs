@@ -17,7 +17,7 @@ namespace Pokemon_AP_Project_G3.Data.Repository
         Task<BaseResponse> AddPokemonsToPokedex(List<int> pokemons, int pUserId);
         Task<BaseResponse> DeletePokemonsToPokedex(int pokemon, int pUserId);
         Task<BaseResponse<Pokemon>> GetPokemon(int pPokemonId);
-        Task<BaseResponse> AddNewTeam(List<int> pokemons, int pUserId);
+        Task<BaseResponse> AddEditTeam(List<int> pokemons, int pUserId, int pTeamId);
     }
     public class TeamRepository : ITeamRepository
     {
@@ -248,34 +248,51 @@ namespace Pokemon_AP_Project_G3.Data.Repository
             return res;
         }
 
-        public async Task<BaseResponse> AddNewTeam(List<int> pokemons, int pUserId)
+        public async Task<BaseResponse> AddEditTeam(List<int> pokemons, int pUserId, int pTeamId)
         {
             var res = new BaseResponse();
             try
             {
-                int teamId = _context.Teams.Count() != 0 ? teamId = _context.Teams.Max(p => p.team_id) + 1 : 1;
+                int teamId = pTeamId != 0 ? pTeamId : _context.Teams.Count() != 0 ? _context.Teams.Max(p => p.team_id) + 1 : 1;
                 var team = new Teams()
                 {
                     team_id = teamId,
                     user_id = pUserId
                 };
-                _context.Teams.Add(team);
+                _context.Teams.AddOrUpdate(team);
                 await _context.SaveChangesAsync();
-                int i = 0;
-                foreach (var pokemon in pokemons)
+
+                var existingTeamPokemons = _context.Team_Pokemon.Where(tp => tp.team_id == teamId).ToList();
+
+                if (existingTeamPokemons.Count == 6)
                 {
-                    int teamPokemonId = _context.Team_Pokemon.Count() != 0 ? teamId = _context.Team_Pokemon.Max(p => p.team_pokemon_id) + 1 : 1;
-                    var teamPokemon = new Team_Pokemon()
+                    for (int i = 0; i < pokemons.Count; i++)
                     {
-                        team_id = team.team_id,
-                        position = i,
-                        pokemon_id = pokemon,
-                        team_pokemon_id = teamPokemonId
-                    };
-                    _context.Team_Pokemon.AddOrUpdate(teamPokemon);
-                    await _context.SaveChangesAsync();
-                    i++;
+                        var teamPokemon = existingTeamPokemons[i];
+                        teamPokemon.pokemon_id = pokemons[i];
+                        teamPokemon.position = i; 
+                        _context.Team_Pokemon.AddOrUpdate(teamPokemon);
+                    }
                 }
+                else
+                {
+                    int i = 0;
+                    foreach (var pokemon in pokemons)
+                    {
+                        int teamPokemonId = _context.Team_Pokemon.Count() != 0 ? _context.Team_Pokemon.Max(p => p.team_pokemon_id) + 1 : 1;
+                        var teamPokemon = new Team_Pokemon()
+                        {
+                            team_id = team.team_id,
+                            position = i,
+                            pokemon_id = pokemon,
+                            team_pokemon_id = teamPokemonId
+                        };
+                        _context.Team_Pokemon.AddOrUpdate(teamPokemon);
+                        i++;
+                    }
+                }
+
+                await _context.SaveChangesAsync();
 
                 res.ErrorMessage = "";
                 res.Success = true;
@@ -287,5 +304,6 @@ namespace Pokemon_AP_Project_G3.Data.Repository
             }
             return res;
         }
+
     }
 }

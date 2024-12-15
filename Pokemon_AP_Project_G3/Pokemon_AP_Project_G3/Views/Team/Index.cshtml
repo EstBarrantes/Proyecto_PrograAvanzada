@@ -291,6 +291,15 @@
                         }
                     }
 
+                    $(".poke-item-team-modal").each(function () {
+                        var pokemonId = $(this).data('pokemon-id'); 
+                        if (selectedPokemonsTeam.includes(pokemonId)) {
+                            $(this).find('.p-3').css("background-color", "#ddd");
+                        } else {
+                            $(this).find('.p-3').css("background-color", ""); 
+                        }
+                    });
+
                     modal.find('.modal-title').text(`Edit Team ${button.data('team-index')}`);
                 } else {
                     selectedPokemonsTeam = [];
