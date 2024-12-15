@@ -20,16 +20,18 @@
                                     <img src="@pokemon.img_url_enemy" alt="@pokemon.name" class="img-thumbnail me-2" style="width: 50px; height: 50px;">
                                 }
                             </div>
-                            <a href="/Team/Edit/@team.TeamId" class="btn btn-sm btn-primary ms-auto">Edit</a>
+                            <button class="btn btn-sm btn-primary ms-auto" data-bs-toggle="modal" data-bs-target="#teamModal" style="width: 50px; height: 50px;">
+                                Edit
+                            </button>
                         </div>
                     </div>
                 }
                 @if (Model.Teams.Count < 3)
                 {
                     <div class="d-flex justify-content-end">
-                        <a href="/Team/Create" class="btn btn-lg btn-success rounded-circle shadow" style="width: 50px; height: 50px;">
+                        <button class="btn btn-lg btn-success rounded-circle shadow" data-bs-toggle="modal" data-bs-target="#teamModal" style="width: 50px; height: 50px;">
                             <span class="fs-4">+</span>
-                        </a>
+                        </button>
                     </div>
                 }
             </div>
@@ -37,7 +39,8 @@
 
         <div class="col-md-7">
             <h3 class="mb-3">Pokémons Owned</h3>
-            <div class="overflow-auto" style="max-height: 600px;">
+            <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#pokemonModal">Add Pokémons</button>
+            <div class="overflow-auto" style="max-height: 600px; overflow-x: hidden !important;">
                 <div class="row">
                     @foreach (var pokedexEntry in Model.Pokedex)
                     {
@@ -49,6 +52,7 @@
                                         <h5 class="m-0">@pokedexEntry.Pokemon.name</h5>
                                         <small class="text-muted">Weight: @pokedexEntry.Pokemon.weight kg | Type: @pokedexEntry.Pokemon.type</small>
                                     </div>
+                                    <button class="btn btn-danger ms-auto" onclick="confirmDelete(@pokedexEntry.Pokemon.pokemon_id)">Delete</button>
                                 </div>
                             </div>
                         </div>
@@ -58,3 +62,253 @@
         </div>
     </div>
 </main>
+
+<!-- Modal Add Pokemons-->
+<div class="modal fade" id="pokemonModal" tabindex="-1" aria-labelledby="pokemonModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pokemonModalLabel">Add Pokémons</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="overflow-auto" style="max-height: 600px; overflow-x: hidden !important">
+                    <div class="row">
+                        @foreach (var pokedexEntry in Model.PokemonsNotOwned)
+                        {
+                            <a class="col-12 mb-3 poke-item-modal" data-pokemon-id="@pokedexEntry.pokemon_id" style="cursor: pointer; text-decoration:none; color: black">
+                                <div class="p-3 shadow rounded" style="background-color: #ffffff;">
+                                    <div class="d-flex align-items-center">
+                                        <img src="@pokedexEntry.img_url_enemy" alt="@pokedexEntry.name" class="img-thumbnail me-3" style="width: 50px; height: 50px;">
+                                        <div>
+                                            <h5 class="m-0">@pokedexEntry.name</h5>
+                                            <small class="text-muted">Weight: @pokedexEntry.weight kg | Type: @pokedexEntry.type</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="addPokemons">Add Pokémon</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal New Team -->
+<div class="modal fade" id="teamModal" tabindex="-1" aria-labelledby="teamModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="teamModalLabel">Create Team</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-2 mb-3 poke-item">
+                                <img src="https://img.pokemondb.net/sprites/items/poke-ball.png" alt="Pokeball" class="img-thumbnail pokeball" id="pokemon1">
+                            </div>
+                            <div class="col-2 mb-3 poke-item">
+                                <img src="https://img.pokemondb.net/sprites/items/poke-ball.png" alt="Pokeball" class="img-thumbnail pokeball" id="pokemon2">
+                            </div>
+                            <div class="col-2 mb-3 poke-item">
+                                <img src="https://img.pokemondb.net/sprites/items/poke-ball.png" alt="Pokeball" class="img-thumbnail pokeball" id="pokemon3">
+                            </div>
+                            <div class="col-2 mb-3 poke-item">
+                                <img src="https://img.pokemondb.net/sprites/items/poke-ball.png" alt="Pokeball" class="img-thumbnail pokeball" id="pokemon4">
+                            </div>
+                            <div class="col-2 mb-3 poke-item">
+                                <img src="https://img.pokemondb.net/sprites/items/poke-ball.png" alt="Pokeball" class="img-thumbnail pokeball" id="pokemon5">
+                            </div>
+                            <div class="col-2 mb-3 poke-item">
+                                <img src="https://img.pokemondb.net/sprites/items/poke-ball.png" alt="Pokeball" class="img-thumbnail pokeball" id="pokemon6">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-7">
+                        <h3 class="mb-3">Pokémons Owned</h3>
+                        <div class="overflow-auto" style="max-height: 600px;">
+                            <div class="row">
+                                @foreach (var pokedexEntry in Model.Pokedex)
+                                {
+                                    <a class="col-12 mb-3 poke-item-team-modal" data-pokemon-id="@pokedexEntry.Pokemon.pokemon_id" style="cursor: pointer; text-decoration: none; color: black;">
+                                        <div class="p-3 shadow rounded" style="@((pokedexEntry.Status == "Infirmary") ? "background-color: #f8d7da;" : "background-color: #ffffff;")">
+                                            <div class="d-flex align-items-center">
+                                                <img src="@pokedexEntry.Pokemon.img_url_enemy" alt="@pokedexEntry.Pokemon.name" class="img-thumbnail me-3" style="width: 50px; height: 50px;">
+                                                <div>
+                                                    <h5 class="m-0">@pokedexEntry.Pokemon.name</h5>
+                                                    <small class="text-muted">Weight: @pokedexEntry.Pokemon.weight kg | Type: @pokedexEntry.Pokemon.type</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="saveTeamBtn">Save Team</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        var selectedPokemonsAdd = [];
+        var selectedPokemonsTeam = [];
+
+        $(document).ready(function () {
+            //Add Pokemon to Pokedex
+            $('.poke-item-modal').click(function () {
+                var pokemonId = $(this).data('pokemon-id');
+
+                if (selectedPokemonsAdd.includes(pokemonId)) {
+                    selectedPokemonsAdd = selectedPokemonsAdd.filter(id => id !== pokemonId);
+                    $(this).find('.p-3').css('background-color', '#ffffff');
+                } else {
+                    selectedPokemonsAdd.push(pokemonId);
+                    $(this).find('.p-3').css('background-color', '#d3d3d3');
+                }
+            });
+
+            $('#addPokemons').click(function () {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Team/AddPokemonsToPokedex',
+                    data: { pokemons: selectedPokemonsAdd },
+                    success: function (response) {
+                        if (response.success) {
+                            $('#pokemonModal').modal('hide');
+                            Swal.fire('¡Éxito!', 'El equipo ha sido guardado.', 'success');
+                            location.reload();
+                        } else {
+                            $('#pokemonModal').modal('hide');
+                            Swal.fire('¡Error!', 'Hubo un problema al guardar el equipo.', 'error');
+                        }
+                    },
+                    error: function () {
+                        $('#pokemonModal').modal('hide');
+                        Swal.fire('¡Error!', 'Hubo un problema al guardar el equipo.', 'error');
+                    }
+                });
+            });
+
+            //Add Pokemon to New Team
+            $(".poke-item-team-modal").click(function () {
+                var pokemonId = $(this).data("pokemon-id");
+
+                if (selectedPokemonsTeam.includes(pokemonId)) {
+                    selectedPokemonsTeam = selectedPokemonsTeam.filter(p => p !== pokemonId);
+                    $(this).find('.p-3').css("background-color", "#ffffff");
+                } else {
+                    if (selectedPokemonsTeam.length < 6) {
+                        selectedPokemonsTeam.push(pokemonId);
+                        $(this).find('.p-3').css("background-color", "#ddd"); 
+                    } else {
+                        Swal.fire({
+                            title: '¡Alerta!',
+                            text: 'No puedes agregar más de 6 Pokémon a tu equipo.',
+                            icon: 'warning',
+                            confirmButtonText: 'Ok'
+                        });
+                    }
+                }
+
+                for (let i = 0; i < 6; i++) {
+                    let pokeBall = $(`#pokemon${i + 1}`);
+                    if (selectedPokemonsTeam[i]) {
+                        let selectedPokemonId = selectedPokemonsTeam[i];
+                        $.ajax({
+                            url: '/Team/GetPokemonImgUrl',
+                            method: 'GET',
+                            data: { pokemonId: selectedPokemonId },
+                            dataType: 'json',
+                            success: function (data) {
+                                //console.log("Respuesta recibida:", data);
+                                if (data.success) {
+                                    pokeBall.attr("src", data.img_url_enemy);
+                                } else {
+                                    console.log("Error en la respuesta:", data.message);
+                                }
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                console.log("Error en AJAX:", textStatus, errorThrown);
+                            }
+                        });
+                    } else {
+                        pokeBall.attr("src", "https://img.pokemondb.net/sprites/items/poke-ball.png"); 
+                    }
+                }
+            });
+
+            $("#saveTeamBtn").click(function () {
+                if (selectedPokemonsTeam.length === 6) {
+                    $.ajax({
+                        url: '/Team/AddNewTeam',
+                        method: 'POST',
+                        data: { pokemonIds: selectedPokemonsTeam },
+                        success: function (response) {
+                            if (response.success) {
+                                $('#teamModal').modal('hide');
+                                Swal.fire('¡Éxito!', 'El equipo ha sido guardado.', 'success');
+                                location.reload(); 
+                            } else {
+                                $('#teamModal').modal('hide');
+                                Swal.fire('¡Error!', 'Hubo un problema al guardar el equipo.', 'error');
+                            }
+
+                        },
+                        error: function () {
+                            $('#teamModal').modal('hide');
+                            Swal.fire('¡Error!', 'Hubo un problema al guardar el equipo.', 'error');
+                        }
+                    });
+                } else {
+                    Swal.fire('¡Alerta!', 'Debes seleccionar 6 Pokémon para crear un equipo.', 'warning');
+                }
+            });
+        });
+
+        function confirmDelete(pokemonId) {
+        Swal.fire({
+            title: '¿Seguro?',
+            text: '¿Seguro que deseas eliminar este Pokémon?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sí',
+            cancelButtonText: 'No'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("DeletePokemon", "Team")',
+                    data: { pokemonId: pokemonId },
+                    success: function (response) {
+                        if (response.success) {
+                            Swal.fire('Eliminado!', 'El Pokémon ha sido eliminado.', 'success');
+                            location.reload();
+                        } else {
+                            Swal.fire('Error', 'Hubo un problema al eliminar el Pokémon.', 'error');
+                        }
+                    },
+                    error: function () {
+                        Swal.fire('Error', 'Hubo un problema al eliminar el Pokémon.', 'error');
+                    }
+                });
+            }
+        });
+    }
+    </script>
+}

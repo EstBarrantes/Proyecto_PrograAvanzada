@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,13 @@ namespace Pokemon_AP_Project_G3.Data.Repository
     {
         Task<BaseResponse<TeamQuery>> GetTeamsByUserId(int pUserId);
         Task<BaseResponse<PokedexQuery>> GetPokedexByUserId(int pUserId);
+        Task<BaseResponse<Pokemon>> GetPokemonsNotOwned(int pUserId);
+        Task<BaseResponse> AddPokemonsToPokedex(List<int> pokemons, int pUserId);
+        Task<BaseResponse> DeletePokemonsToPokedex(int pokemon, int pUserId);
+        Task<BaseResponse<Pokemon>> GetPokemon(int pPokemonId);
+        Task<BaseResponse> AddNewTeam(List<int> pokemons, int pUserId);
     }
-    public class TeamRepository: ITeamRepository
+    public class TeamRepository : ITeamRepository
     {
         private readonly PokemonGameEntities _context;
 
@@ -46,7 +52,6 @@ namespace Pokemon_AP_Project_G3.Data.Repository
                                                            }).ToList()
                                        }).ToListAsync();
 
-                // Luego, mapeamos estos datos a objetos TeamQuery y Pokemon
                 res.List = teamsData.Select(t => new TeamQuery
                 {
                     TeamId = t.TeamId,
@@ -59,7 +64,7 @@ namespace Pokemon_AP_Project_G3.Data.Repository
                         weight = p.weight,
                         img_url_enemy = p.img_url_enemy
                     }).ToList()
-                }).ToList();
+                }).OrderBy(x => x.TeamId).ToList();
 
                 res.ErrorMessage = "";
                 res.Success = true;
@@ -96,7 +101,6 @@ namespace Pokemon_AP_Project_G3.Data.Repository
                                              }
                                          }).ToListAsync();
 
-                // Luego, mapeamos estos datos a objetos PokedexQuery y Pokemon
                 res.List = pokedexData.Select(p => new PokedexQuery
                 {
                     PokedexId = p.PokedexId,
@@ -110,7 +114,7 @@ namespace Pokemon_AP_Project_G3.Data.Repository
                         weight = p.Pokemon.weight,
                         img_url_enemy = p.Pokemon.img_url_enemy
                     }
-                }).ToList();
+                }).OrderBy(x => x.Pokemon.pokemon_id).ToList();
 
                 res.ErrorMessage = "";
                 res.Success = true;
@@ -120,6 +124,166 @@ namespace Pokemon_AP_Project_G3.Data.Repository
                 res.ErrorMessage = $"{ex.Message} - TeamRepository";
                 res.Success = false;
                 res.List = new List<PokedexQuery>();
+            }
+            return res;
+        }
+
+        public async Task<BaseResponse<Pokemon>> GetPokemonsNotOwned(int pUserId)
+        {
+            var res = new BaseResponse<Pokemon>();
+            try
+            {
+                var ownedPokemonIds = await _context.Pokedex
+                                                        .Where(p => p.user_id == pUserId)
+                                                        .Select(p => p.pokemon_id)
+                                                        .ToListAsync();
+
+                var pokemonsNotOwned = await _context.Pokemon
+                    .Where(p => !ownedPokemonIds.Contains(p.pokemon_id)) 
+                    .Select(p => new 
+                    {
+                        pokemon_id = p.pokemon_id,
+                        name = p.name,
+                        type = p.type,
+                        weight = p.weight,
+                        img_url_enemy = p.img_url_enemy
+                    })
+                    .ToListAsync();
+
+                res.List = pokemonsNotOwned.Select(p => new Pokemon
+                {
+                    pokemon_id = p.pokemon_id,
+                    name = p.name,
+                    type = p.type,
+                    weight = p.weight,
+                    img_url_enemy = p.img_url_enemy
+                }).OrderBy(x => x.pokemon_id).ToList(); 
+
+                res.ErrorMessage = "";
+                res.Success = true;
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - TeamRepository";
+                res.Success = false;
+                res.List = new List<Pokemon>();
+            }
+            return res;
+        }
+
+        public async Task<BaseResponse> AddPokemonsToPokedex(List<int> pokemons, int pUserId)
+        {
+            var res = new BaseResponse();
+            try
+            {
+                foreach (var pokemon in pokemons)
+                {
+                    var pokedex = new Pokedex() { 
+                        pokedex_id = _context.Pokedex.Max(x => x.pokedex_id)+1,
+                        pokemon_id = pokemon,
+                        status = "Available",
+                        user_id = pUserId
+                    };
+                    _context.Pokedex.AddOrUpdate(pokedex);
+                    await _context.SaveChangesAsync();
+                }
+
+                res.ErrorMessage = "";
+                res.Success = true;
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - TeamRepository";
+                res.Success = false;
+            }
+            return res;
+        }
+
+        public async Task<BaseResponse> DeletePokemonsToPokedex(int pokemon, int pUserId)
+        {
+            var res = new BaseResponse();
+            try
+            {
+                var pokedex = await _context.Pokedex.FirstOrDefaultAsync(p => p.pokemon_id == pokemon && p.user_id == pUserId);
+
+                if (pokedex != null)
+                {
+                    _context.Pokedex.Remove(pokedex);
+                    await _context.SaveChangesAsync();
+                    res.ErrorMessage = "";
+                    res.Success = true;
+                }
+                else
+                {
+                    res.Success = false;
+                    res.ErrorMessage = "Pokémon no encontrado.";
+                }
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - TeamRepository";
+                res.Success = false;
+            }
+            return res;
+        }
+
+        public async Task<BaseResponse<Pokemon>> GetPokemon(int pPokemonId)
+        {
+            var res = new BaseResponse<Pokemon>();
+            try
+            {
+                var pokemons = await _context.Pokemon.Where(p => p.pokemon_id == pPokemonId).ToListAsync();
+
+                res.List = pokemons;
+
+                res.ErrorMessage = "";
+                res.Success = true;
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - TeamRepository";
+                res.Success = false;
+                res.List = new List<Pokemon>();
+            }
+            return res;
+        }
+
+        public async Task<BaseResponse> AddNewTeam(List<int> pokemons, int pUserId)
+        {
+            var res = new BaseResponse();
+            try
+            {
+                int teamId = _context.Teams.Count() != 0 ? teamId = _context.Teams.Max(p => p.team_id) + 1 : 1;
+                var team = new Teams()
+                {
+                    team_id = teamId,
+                    user_id = pUserId
+                };
+                _context.Teams.Add(team);
+                await _context.SaveChangesAsync();
+                int i = 0;
+                foreach (var pokemon in pokemons)
+                {
+                    int teamPokemonId = _context.Team_Pokemon.Count() != 0 ? teamId = _context.Team_Pokemon.Max(p => p.team_pokemon_id) + 1 : 1;
+                    var teamPokemon = new Team_Pokemon()
+                    {
+                        team_id = team.team_id,
+                        position = i,
+                        pokemon_id = pokemon,
+                        team_pokemon_id = teamPokemonId
+                    };
+                    _context.Team_Pokemon.AddOrUpdate(teamPokemon);
+                    await _context.SaveChangesAsync();
+                    i++;
+                }
+
+                res.ErrorMessage = "";
+                res.Success = true;
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - TeamRepository";
+                res.Success = false;
             }
             return res;
         }
