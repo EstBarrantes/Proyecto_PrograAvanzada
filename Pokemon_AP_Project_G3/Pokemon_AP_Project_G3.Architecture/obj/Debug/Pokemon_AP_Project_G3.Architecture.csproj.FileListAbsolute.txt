@@ -34,3 +34,21 @@ C:\Users\dchav\Documents\GitHub\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Po
 C:\Users\dchav\Documents\GitHub\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\bin\Debug\EntityFramework.xml
 C:\Users\dchav\Documents\GitHub\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\dchav\Documents\GitHub\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\obj\Debug\Pokemon_.A6AA2629.Up2Date
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\bin\Debug\Pokemon_AP_Project_G3.Architecture.dll.config
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\bin\Debug\Pokemon_AP_Project_G3.Architecture.dll
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\bin\Debug\Pokemon_AP_Project_G3.Architecture.pdb
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\bin\Debug\EntityFramework.dll
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\bin\Debug\Microsoft.Analytics.Interfaces.dll
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\bin\Debug\Microsoft.Analytics.Types.dll
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\bin\Debug\Pokemon_AP_Project_G3.Data.dll
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\bin\Debug\Pokemon_AP_Project_G3.Data.pdb
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\bin\Debug\Pokemon_AP_Project_G3.Data.dll.config
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\bin\Debug\EntityFramework.xml
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\obj\Debug\Pokemon_AP_Project_G3.Architecture.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\obj\Debug\Pokemon_AP_Project_G3.Architecture.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\obj\Debug\Pokemon_.A6AA2629.Up2Date
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\obj\Debug\Pokemon_AP_Project_G3.Architecture.dll
+C:\Users\Usuario\Desktop\Programación Avanzada\Proyecto\Proyecto_PrograAvanzada\Pokemon_AP_Project_G3\Pokemon_AP_Project_G3.Architecture\obj\Debug\Pokemon_AP_Project_G3.Architecture.pdb

@@ -1,0 +1,27 @@
+﻿
+@model IEnumerable<Pokemon_AP_Project_G3.Data.Users>
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<h2>Login</h2>
+
+<form method="post" action="/Login/Login">
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required />
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required />
+    </div>
+    @if (ViewBag.Error != null)
+    {
+        <p style="color: red;">@ViewBag.Error</p>
+    }
+    <button type="submit">Login</button>
+</form>
+<p>
+    Don't have an account? <a href="/Login/Register">Register here</a>.
+</p>
+
