@@ -36,12 +36,18 @@ namespace Pokemon_AP_Project_G3.Controllers
 
             if (user != null )
             {
-                HttpCookie authCookie = new HttpCookie("AuthUser", user.user_id.ToString())
+                HttpCookie authCookie = new HttpCookie("UserID", user.user_id.ToString())
+                {
+                    Expires = DateTime.Now.AddHours(1),
+                    HttpOnly = true
+                };
+                HttpCookie secCookie = new HttpCookie("UserRole", user.role)
                 {
                     Expires = DateTime.Now.AddHours(1),
                     HttpOnly = true
                 };
                 Response.Cookies.Add(authCookie);
+                Response.Cookies.Add(secCookie);
 
                 return RedirectToAction("Index", "Home");
             }

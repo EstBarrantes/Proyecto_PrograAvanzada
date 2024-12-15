@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Pokemon_AP_Project_G3.Data.Repository;
 using Pokemon_AP_Project_G3.Data.Models;
 using Pokemon_AP_Project_G3.Data;
+using System.Xml.Linq;
 
 namespace Pokemon_AP_Project_G3.Architecture.Services
 {
@@ -23,6 +24,9 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
 
         //Pokedex
         Task<BaseResponse<Pokemon>> GetAllPokemons();
+        Task<Pokemon> GetOnePokemon(int pokemonID);
+        Task<BaseResponse> DeletePokemon(int pokemonID);
+        Task<BaseResponse> AddOrUpdatePokemon(Pokemon pokemon);
         Task<BaseResponse<Pokemon>> GetAllPokemonsFiltered(string pName = null, string pType = null, string pWeight = null);
 
     }
@@ -165,6 +169,19 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             }
             return res;
         }
+        public async Task<Pokemon> GetOnePokemon(int pokemonID)
+        {
+            var res = new Pokemon();
+            try
+            {
+                res = await _repositoryPokedex.GetOnePokemon(pokemonID);
+            }
+            catch (Exception)
+            {
+                res = new Pokemon();
+            }
+            return res;
+        }
 
         public async Task<BaseResponse<Pokemon>> GetAllPokemonsFiltered(string pName = null, string pType = null, string pWeight = null)
         {
@@ -181,6 +198,47 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             }
             return res;
         }
+
+       
+
+        public async Task<BaseResponse> DeletePokemon(int pokemonID)
+        {
+            var res = new BaseResponse();
+            try
+            {
+                res = await _repositoryPokedex.DeletePokemon(pokemonID);
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - Service";
+                res.Success = false;
+            }
+            return res;
+        }
+
+        public async Task<BaseResponse> AddOrUpdatePokemon(Pokemon pokemon)
+        {
+            var res = new BaseResponse();
+            try
+            {
+                if (pokemon.pokemon_id == 0)
+                {
+                   res = await _repositoryPokedex.AddPokemon(pokemon);
+                }
+                else
+                {
+                    res = await _repositoryPokedex.UpdatePokemon(pokemon);
+                };
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - Service";
+                res.Success = false;
+            }
+            return res;
+        }
+
+
         #endregion
     }
 }

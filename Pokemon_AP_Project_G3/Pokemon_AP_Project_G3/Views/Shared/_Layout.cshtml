@@ -21,8 +21,8 @@
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Team Builder", "Index", "Team", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Pokedex", "Index", "Pokedex", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Play", "Index", "Game", new { area = "" }, new { @class = "nav-link" })</li>
-                        @if (Request.Cookies["AuthUser"] != null)
+                    <li>@Html.ActionLink("Play", "Index", "Play", new { area = "" }, new { @class = "nav-link" })</li>
+                        @if (Request.Cookies["UserID"] != null)
                         {
                             <li class="nav-item">
                                 <form method="post" action="/Login/Logoff" style="display:inline;">

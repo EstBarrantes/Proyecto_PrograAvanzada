@@ -5,9 +5,21 @@
 @model PokedexViewModel
 
 <main class="container mt-4">
+
+    @if (!string.IsNullOrEmpty(ViewBag.Error as string))
+    {
+        <div class="alert alert-danger" role="alert">
+            @ViewBag.Error
+        </div>
+    }
     <div class="row">
         <div class="col-12">
             <h3 class="mb-3">Pokedex</h3>
+            @if (ViewBag.RolUsuario == "Administrator")
+            {
+                <a href="/Pokedex/Create" class="btn btn-success mb-3">Agregar Pokémon</a>
+            }
+
             <form action="/Pokedex/FilterPokedex" method="post" class="mb-3">
                 <div class="row">
                     <div class="col-md-3 mb-2">
@@ -59,6 +71,13 @@
                                     </div>
                                 </div>
                                 <span class="fw-bold ms-auto align-self-end">ID @pokedexEntry.pokemon_id</span>
+                                @if (ViewBag.RolUsuario == "Administrator")
+                                {
+                                    <div class="ms-3">
+                                        <a href="/Pokedex/Edit/@pokedexEntry.pokemon_id" class="btn btn-primary btn-sm me-2">Editar</a>
+                                        <a href="/Pokedex/Delete/@pokedexEntry.pokemon_id" class="btn btn-danger btn-sm">Eliminar</a>
+                                    </div>
+                                }
                             </div>
                         </div>
                     }

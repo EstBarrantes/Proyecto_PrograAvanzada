@@ -13,6 +13,10 @@ namespace Pokemon_AP_Project_G3.Data.Repository
     public interface IPokedexRepository
     {
         Task<BaseResponse<Pokemon>> GetAllPokemons();
+        Task<Pokemon> GetOnePokemon(int pokemonID);
+        Task<BaseResponse> AddPokemon(Pokemon pokemon);
+        Task<BaseResponse> UpdatePokemon(Pokemon pokemon);
+        Task<BaseResponse> DeletePokemon(int pokemonID);
         Task<BaseResponse<Pokemon>> GetAllPokemonsFiltered(string pName = null, string pType = null, string pWeight = null);
     }
     public class PokedexRepository : IPokedexRepository
@@ -22,6 +26,21 @@ namespace Pokemon_AP_Project_G3.Data.Repository
         public PokedexRepository()
         {
             _context = new PokemonGameEntities();
+        }
+
+        public async Task<Pokemon> GetOnePokemon(int pokemonID)
+        {
+            var res = new Pokemon();
+            try
+            {
+                res = await _context.Pokemon.FindAsync(pokemonID);
+
+            }
+            catch (Exception)
+            {
+                res = new Pokemon();
+            }
+            return res;
         }
         public async Task<BaseResponse<Pokemon>> GetAllPokemons()
         {
@@ -71,6 +90,66 @@ namespace Pokemon_AP_Project_G3.Data.Repository
                 res.ErrorMessage = $"{ex.Message} - TeamRepository";
                 res.Success = false;
                 res.List = new List<Pokemon>();
+            }
+            return res;
+        }
+
+        public async Task<BaseResponse> AddPokemon(Pokemon pokemon)
+        {
+            var res = new BaseResponse();
+            try
+            {
+                _context.Pokemon.Add(pokemon);
+                await _context.SaveChangesAsync();
+                res.ErrorMessage = "";
+                res.Success = true;
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - TeamRepository";
+                res.Success = false;
+            }
+            return res;
+        }
+
+        public async Task<BaseResponse> UpdatePokemon(Pokemon pokemon)
+        {
+            var res = new BaseResponse();
+            try
+            {
+                _context.Pokemon.AddOrUpdate(pokemon);
+                await _context.SaveChangesAsync();
+                res.ErrorMessage = "";
+                res.Success = true;
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - TeamRepository";
+                res.Success = false;
+            }
+            return res;
+        }
+
+        public async Task<BaseResponse> DeletePokemon(int pokemonID)
+        {
+            var res = new BaseResponse();
+            try
+            {
+                var pokemon = await _context.Pokemon.FindAsync(pokemonID);
+                if (pokemon != null)
+                {
+                    _context.Pokemon.Remove(pokemon);
+                    await _context.SaveChangesAsync();
+                    res.ErrorMessage = "";
+                    res.Success = true;
+                }
+                res.ErrorMessage = $"Pokemon not found - TeamRepository";
+                res.Success = false;
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - TeamRepository";
+                res.Success = false;
             }
             return res;
         }
