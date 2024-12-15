@@ -2,32 +2,85 @@
     ViewBag.Title = "Home";
 }
 
-<main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-    </section>
-
+<div class="container mt-4">
     <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
+        <div class="col-md-8">
+            <h1 class="display-4">¡Bienvenido a Pokémon APP G3!</h1>
+            <p class="lead">Explora, construye tu equipo Pokémon y desafía a otros entrenadores en batallas épicas.</p>
+            <!-- Video-->
+            <div class="mb-4">
+                <iframe width="100%" height="315"
+                        src="https://www.youtube.com/embed/rg6CiPI6h2g"
+                        frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
+
+            <a href="@Url.Action("Index", "Play")" class="btn btn-success btn-lg">Play Now</a>
+        </div>
+
+        <div class="col-md-4">
+            <h4>Chat</h4>
+            <div id="chatContainer">
+                @Html.Action("Index", "Chat")
+            </div>
+        </div>
     </div>
-</main>
+</div>
+
+<button id="chatToggle" class="btn btn-primary"
+        style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
+    Chat 💬
+</button>
+
+<div id="chatWindow" class="card border-primary"
+     style="display: none; position: fixed; bottom: 80px; right: 20px; width: 300px; z-index: 1000;">
+    <div class="card-header bg-primary text-white d-flex justify-content-between">
+        Chat
+        <button id="closeChat" class="btn btn-sm btn-light">X</button>
+    </div>
+    <div class="card-body" style="height: 300px; overflow-y: scroll; background-color: #f8f9fa;">
+        <div id="chatContainerPopUp">
+            @Html.Action("Index", "Chat")
+        </div>
+    </div>
+    <div class="card-footer">
+        <form method="post" action="@Url.Action("Send", "Chat")" id="chatForm">
+            <div class="input-group mb-3">
+                <select name="receiverUsername" class="form-control" required>
+                    <option value="">Selecciona un destinatario</option>
+                    @foreach (var user in ViewBag.UserList)
+                    {
+                        <option value="@user.Value">@user.Text</option>
+                    }
+                </select>
+                <input type="text" name="content" placeholder="Escribe un mensaje..." class="form-control" required />
+
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-success">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#chatToggle").click(function () {
+            $("#chatWindow").fadeIn();
+        });
+
+        $("#closeChat").click(function () {
+            $("#chatWindow").fadeOut();
+        });
+
+        $("#chatForm").submit(function (e) {
+            e.preventDefault();
+            $.post($(this).attr("action"), $(this).serialize(), function () {
+                $("#chatContainer").load("@Url.Action("Index", "Chat")");
+                $("#chatContainerPopUp").load("@Url.Action("Index", "Chat")");
+                $("#chatForm")[0].reset();
+            });
+        });
+    });
+</script>
