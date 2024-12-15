@@ -1,104 +1,97 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\",
+  "WorkspaceRootPath": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3.data\\repository\\messagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|solutionrelative:pokemon_ap_project_g3.data\\repository\\messagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3\\controllers\\teamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|c:\\users\\juvardz\\documents\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3.data\\repository\\messagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|solutionrelative:pokemon_ap_project_g3.data\\repository\\messagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3\\controllers\\teamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\controllers\\teamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\UserRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\UserRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|solutionrelative:Pokemon_AP_Project_G3.Data\\Repository\\UserRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3.data\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3.data\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|solutionrelative:pokemon_ap_project_g3.data\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3.data\\models\\querys\\pokedexquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3.data\\models\\querys\\pokedexquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|solutionrelative:pokemon_ap_project_g3.data\\models\\querys\\pokedexquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3\\views\\chat\\_chatpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3\\views\\chat\\_chatpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\views\\chat\\_chatpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Pokemon_AP_Project_G3.MVC||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3.data\\db scripts\\pokemongame_g3.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3.data\\db scripts\\pokemongame_g3.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
       "RelativeMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|solutionrelative:pokemon_ap_project_g3.data\\db scripts\\pokemongame_g3.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3.data\\pokemon_app_ado.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3.data\\pokemon_app_ado.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|solutionrelative:pokemon_ap_project_g3.data\\pokemon_app_ado.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3.data\\repository\\pokedexrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3.data\\repository\\pokedexrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|solutionrelative:pokemon_ap_project_g3.data\\repository\\pokedexrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9EEEA03-DEC8-48E8-8777-4C8906A7817F}|Pokemon_AP_Project_G3.Architecture\\Pokemon_AP_Project_G3.Architecture.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3.architecture\\services\\pokemonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D9EEEA03-DEC8-48E8-8777-4C8906A7817F}|Pokemon_AP_Project_G3.Architecture\\Pokemon_AP_Project_G3.Architecture.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3.architecture\\services\\pokemonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D9EEEA03-DEC8-48E8-8777-4C8906A7817F}|Pokemon_AP_Project_G3.Architecture\\Pokemon_AP_Project_G3.Architecture.csproj|solutionrelative:pokemon_ap_project_g3.architecture\\services\\pokemonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3\\controllers\\pokedexcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3\\controllers\\pokedexcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\controllers\\pokedexcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3.data\\models\\querys\\teamquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3.data\\models\\querys\\teamquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|solutionrelative:pokemon_ap_project_g3.data\\models\\querys\\teamquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3.data\\models\\base\\baseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3.data\\models\\base\\baseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|solutionrelative:pokemon_ap_project_g3.data\\models\\base\\baseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Shared\\_LayoutLogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pokemon_AP_Project_G3\\Views\\Shared\\_LayoutLogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Shared\\_LayoutLogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:Pokemon_AP_Project_G3\\Views\\Shared\\_LayoutLogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Login\\Register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pokemon_AP_Project_G3\\Views\\Login\\Register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|909d16b3-c8e8-43d1-a2b8-26ea0d4b6b57"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|c:\\users\\juvardz\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3.data\\db scripts\\pokemongame_g3.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
-      "RelativeMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|solutionrelative:pokemon_ap_project_g3.data\\db scripts\\pokemongame_g3.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Login\\Register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:Pokemon_AP_Project_G3\\Views\\Login\\Register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -108,7 +101,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 29,
+          "SelectedChildIndex": 25,
           "Children": [
             {
               "$type": "Bookmark",
@@ -208,26 +201,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Message.cs",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Models\\Message.cs",
-              "RelativeDocumentMoniker": "Pokemon_AP_Project_G3.Data\\Models\\Message.cs",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Models\\Message.cs",
-              "RelativeToolTip": "Pokemon_AP_Project_G3.Data\\Models\\Message.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "MessageRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\MessageRepository.cs",
+              "RelativeDocumentMoniker": "Pokemon_AP_Project_G3.Data\\Repository\\MessageRepository.cs",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\MessageRepository.cs",
+              "RelativeToolTip": "Pokemon_AP_Project_G3.Data\\Repository\\MessageRepository.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T14:47:22.272Z",
+              "WhenOpened": "2024-12-15T14:48:49.57Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Pokemon_AP_Project_G3\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAACYAAAAAAAAAAAAgwDIAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-15T14:17:37.089Z",
               "EditorCaption": ""
@@ -236,65 +229,37 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "TeamController.cs",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\TeamController.cs",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\TeamController.cs",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Controllers\\TeamController.cs",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\TeamController.cs",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\TeamController.cs",
               "RelativeToolTip": "Pokemon_AP_Project_G3\\Controllers\\TeamController.cs",
               "ViewState": "AgIAADgAAAAAAAAAAIAwwE0AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T14:41:52.232Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T14:41:52.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Pokemon_AP_Project_G3\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAiwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T14:10:42.176Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Pokemon_AP_Project_G3\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAiwBkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T14:10:42.176Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "ChatController.cs",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\ChatController.cs",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\ChatController.cs",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Controllers\\ChatController.cs",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\ChatController.cs",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\ChatController.cs",
               "RelativeToolTip": "Pokemon_AP_Project_G3\\Controllers\\ChatController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAiwBwAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-15T14:55:47.306Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MessageRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\MessageRepository.cs",
-              "RelativeDocumentMoniker": "Pokemon_AP_Project_G3.Data\\Repository\\MessageRepository.cs",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\MessageRepository.cs",
-              "RelativeToolTip": "Pokemon_AP_Project_G3.Data\\Repository\\MessageRepository.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T14:48:49.57Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PokedexQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Models\\Querys\\PokedexQuery.cs",
-              "RelativeDocumentMoniker": "Pokemon_AP_Project_G3.Data\\Models\\Querys\\PokedexQuery.cs",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Models\\Querys\\PokedexQuery.cs",
-              "RelativeToolTip": "Pokemon_AP_Project_G3.Data\\Models\\Querys\\PokedexQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T14:29:21.801Z",
               "EditorCaption": ""
             },
             {
@@ -303,49 +268,70 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Message.cs",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Models\\Message.cs",
+              "RelativeDocumentMoniker": "Pokemon_AP_Project_G3.Data\\Models\\Message.cs",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Models\\Message.cs",
+              "RelativeToolTip": "Pokemon_AP_Project_G3.Data\\Models\\Message.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T14:47:22.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PokedexQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Models\\Querys\\PokedexQuery.cs",
+              "RelativeDocumentMoniker": "Pokemon_AP_Project_G3.Data\\Models\\Querys\\PokedexQuery.cs",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Models\\Querys\\PokedexQuery.cs",
+              "RelativeToolTip": "Pokemon_AP_Project_G3.Data\\Models\\Querys\\PokedexQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T14:29:21.801Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
               "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\UserRepository.cs",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3.Data\\Repository\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\UserRepository.cs",
               "RelativeToolTip": "Pokemon_AP_Project_G3.Data\\Repository\\UserRepository.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAACQAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T03:42:13.704Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T03:42:13.704Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "_ChatPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Chat\\_ChatPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Chat\\_ChatPartial.cshtml",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Views\\Chat\\_ChatPartial.cshtml",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Chat\\_ChatPartial.cshtml",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Chat\\_ChatPartial.cshtml",
               "RelativeToolTip": "Pokemon_AP_Project_G3\\Views\\Chat\\_ChatPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-15T14:57:31.122Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T14:57:31.122Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "Pokemon_AP_Project_G3.MVC",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj",
               "RelativeToolTip": "Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-15T14:11:13.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T14:11:13.173Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Web.config",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Web.config",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Web.config",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Web.config",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Web.config",
               "RelativeToolTip": "Pokemon_AP_Project_G3\\Web.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
@@ -356,125 +342,116 @@
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "PokemonGame_G3.sql ",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\DB Scripts\\PokemonGame_G3.sql",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\DB Scripts\\PokemonGame_G3.sql",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3.Data\\DB Scripts\\PokemonGame_G3.sql",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\DB Scripts\\PokemonGame_G3.sql",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\DB Scripts\\PokemonGame_G3.sql",
               "RelativeToolTip": "Pokemon_AP_Project_G3.Data\\DB Scripts\\PokemonGame_G3.sql",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-12-15T15:07:05.416Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T15:07:05.416Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "Pokemon_APP_ADO.Context.cs",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Pokemon_APP_ADO.Context.cs",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Pokemon_APP_ADO.Context.cs",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3.Data\\Pokemon_APP_ADO.Context.cs",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Pokemon_APP_ADO.Context.cs",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Pokemon_APP_ADO.Context.cs",
               "RelativeToolTip": "Pokemon_AP_Project_G3.Data\\Pokemon_APP_ADO.Context.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T14:32:49.951Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T14:32:49.951Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\LoginController.cs",
               "RelativeToolTip": "Pokemon_AP_Project_G3\\Controllers\\LoginController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAQwC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T03:54:37.199Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T03:54:37.199Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Login\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Login\\Index.cshtml",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Views\\Login\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Login\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Login\\Index.cshtml",
               "RelativeToolTip": "Pokemon_AP_Project_G3\\Views\\Login\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-15T04:54:44.882Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T04:54:44.882Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "PokedexRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\PokedexRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\PokedexRepository.cs",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3.Data\\Repository\\PokedexRepository.cs",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\PokedexRepository.cs",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\PokedexRepository.cs",
               "RelativeToolTip": "Pokemon_AP_Project_G3.Data\\Repository\\PokedexRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T14:48:59.777Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T14:48:59.777Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "PokemonService.cs",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Architecture\\Services\\PokemonService.cs",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Architecture\\Services\\PokemonService.cs",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3.Architecture\\Services\\PokemonService.cs",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Architecture\\Services\\PokemonService.cs",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Architecture\\Services\\PokemonService.cs",
               "RelativeToolTip": "Pokemon_AP_Project_G3.Architecture\\Services\\PokemonService.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T14:43:05.215Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T14:43:05.215Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
               "Title": "PokedexController.cs",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\PokedexController.cs",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\PokedexController.cs",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Controllers\\PokedexController.cs",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\PokedexController.cs",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\PokedexController.cs",
               "RelativeToolTip": "Pokemon_AP_Project_G3\\Controllers\\PokedexController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T14:41:24.998Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T14:41:24.998Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 19,
               "Title": "BaseResponse.cs",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Models\\Base\\BaseResponse.cs",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Models\\Base\\BaseResponse.cs",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3.Data\\Models\\Base\\BaseResponse.cs",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Models\\Base\\BaseResponse.cs",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Models\\Base\\BaseResponse.cs",
               "RelativeToolTip": "Pokemon_AP_Project_G3.Data\\Models\\Base\\BaseResponse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T14:34:08.346Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T14:34:08.346Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
               "Title": "TeamQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Models\\Querys\\TeamQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Models\\Querys\\TeamQuery.cs",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3.Data\\Models\\Querys\\TeamQuery.cs",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Models\\Querys\\TeamQuery.cs",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Models\\Querys\\TeamQuery.cs",
               "RelativeToolTip": "Pokemon_AP_Project_G3.Data\\Models\\Querys\\TeamQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T14:29:23.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T14:29:23.708Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
               "Title": "_LayoutLogin.cshtml",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Shared\\_LayoutLogin.cshtml",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Shared\\_LayoutLogin.cshtml",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Views\\Shared\\_LayoutLogin.cshtml",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Shared\\_LayoutLogin.cshtml",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Shared\\_LayoutLogin.cshtml",
               "RelativeToolTip": "Pokemon_AP_Project_G3\\Views\\Shared\\_LayoutLogin.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -484,22 +461,21 @@
               "$type": "Document",
               "DocumentIndex": 20,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Pokemon_AP_Project_G3\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-15T04:17:46.916Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T04:17:46.916Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 22,
               "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Login\\Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Login\\Register.cshtml",
               "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Views\\Login\\Register.cshtml",
-              "ToolTip": "C:\\Users\\Juvardz\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Login\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Juvardz\\Documents\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Login\\Register.cshtml",
               "RelativeToolTip": "Pokemon_AP_Project_G3\\Views\\Login\\Register.cshtml",
               "ViewState": "AgIAAA8AAAAAAAAAAAAQwB0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
