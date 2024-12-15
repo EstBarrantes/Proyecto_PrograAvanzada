@@ -36,7 +36,7 @@ namespace Pokemon_AP_Project_G3.Controllers
 
             if (user != null )
             {
-                HttpCookie authCookie = new HttpCookie("AuthUser", user.username)
+                HttpCookie authCookie = new HttpCookie("AuthUser", user.user_id.ToString())
                 {
                     Expires = DateTime.Now.AddHours(1),
                     HttpOnly = true
