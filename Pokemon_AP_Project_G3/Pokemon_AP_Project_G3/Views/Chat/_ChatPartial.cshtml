@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Pokemon_AP_Project_G3.Data.Models.Message>
+
+<div class="chat-box" style="height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px;">
+    @foreach (var message in Model)
+    {
+        <div>
+            <strong>Remitente (@message.sender_id):</strong> @message.content
+            <small class="text-muted float-right">(@message.sent_date.ToString("g"))</small>
+        </div>
+    }
+</div>
