@@ -7,12 +7,22 @@ GO
 USE PokemonGame;
 GO
 
+DROP TABLE Medical_Attention; 
+DROP TABLE Challenges; 
+DROP TABLE Messages; 
+DROP TABLE Team_Pokemon; 
+DROP TABLE Teams; 
+DROP TABLE Pokedex; 
+DROP TABLE Pokemon; 
+DROP TABLE Users; 
+
 -- Table Users
 CREATE TABLE Users (
     user_id INT PRIMARY KEY IDENTITY,
     name VARCHAR(50) NOT NULL,
     username VARCHAR(50) NOT NULL UNIQUE,
     password_hash VARCHAR(256) NOT NULL,
+	gender VARCHAR(20) CHECK (gender IN ('Masculine', 'Femenine', 'Other')) NOT NULL,
     role VARCHAR(20) CHECK (role IN ('Trainer', 'Administrator', 'Nurse')) NOT NULL,
     registration_date DATE DEFAULT GETDATE()
 );
@@ -25,7 +35,9 @@ CREATE TABLE Pokemon (
     weakness VARCHAR(50),
     weight DECIMAL(5, 2) CHECK (weight > 0),
     number INT UNIQUE NOT NULL,
-    evolves_from INT FOREIGN KEY REFERENCES Pokemon(pokemon_id)
+    evolves_from INT FOREIGN KEY REFERENCES Pokemon(pokemon_id),
+	img_url_ally VARCHAR(2048)NOT NULL,
+	img_url_enemy VARCHAR(2048)NOT NULL
 );
 
 -- Table Pokedex
