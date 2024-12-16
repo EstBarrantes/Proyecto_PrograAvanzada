@@ -1,0 +1,102 @@
+﻿@using Pokemon_AP_Project_G3.Controllers
+@{
+    ViewBag.Title = "Pharmacy";
+}
+@model PharmacyViewModel
+
+<main class="container mt-4">
+
+    @if (!string.IsNullOrEmpty(ViewBag.Error as string))
+    {
+        <div class="alert alert-danger" role="alert">
+            @ViewBag.Error
+        </div>
+    }
+    <div class="row">
+        <div class="col-12">
+            <h3 class="mb-3">Pharmacy</h3>
+
+            <form action="/Pharmacy/Filter" method="post" class="mb-3 align-content-start">
+                <div class="row">
+                    <div class="col-md-3 mb-2">
+                        <select name="status" class="form-control">
+                            <option value="">All Status</option>
+                            <option value="Pending">Pending</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <button type="submit" class="btn btn-primary">Filter</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="overflow-auto" style="max-height: 600px; overflow-x: hidden !important;">
+                <div class="row">
+                    @foreach (var pokedexEntry in Model.Pokemons)
+                    {
+                        <div class="col-12 mb-3">
+                            <div class="p-3 shadow rounded d-flex" style="@((pokedexEntry.status == "Completed") ? "background-color: #d4edda;" : (pokedexEntry.status == "In Progress") ? "background-color: #fff3cd;" : "background-color: #f8d7da;")">
+                                <div class="d-flex align-items-center">
+                                    <img src="@pokedexEntry.pokemon_img_url" alt="@pokedexEntry.pokemon_name" class="img-thumbnail me-3" style="width: 50px; height: 50px;">
+                                    <div>
+                                        <h5 class="m-0">Pokemon Name: @pokedexEntry.pokemon_name | Owner username: @pokedexEntry.username</h5>
+                                        <small class="text-muted">Status: @pokedexEntry.status | Request date: @pokedexEntry.request_date | Attention date: @pokedexEntry.attention_date</small>
+                                    </div>
+                                </div>
+                                <span class="fw-bold ms-auto align-self-end">ID @pokedexEntry.attention_id</span>
+                                @if (pokedexEntry.status == "Pending")
+                                {
+                                    <button class="btn btn-success ms-auto" onclick="confirmHeal(@pokedexEntry.pokemon_id, @pokedexEntry.user_id)">Heal</button>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+@section Scripts {
+    <script>
+        function confirmHeal(pokemonId, userId) {
+            Swal.fire({
+                title: '¿Seguro?',
+                text: '¿Seguro que curaras este Pokémon? (Tardara 5 segundos en curarse)',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sí',
+                cancelButtonText: 'No'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("HealPokemon", "Pharmacy")',
+                        data: { pokemonId: pokemonId, userId: userId },
+                        success: function (response) {
+                            if (response.success) {
+                                Swal.fire('Curado!', 'El Pokémon se está curando.', 'success').then(() => {
+                                    setTimeout(() => {
+                                        location.reload();
+                                    }, 5000);
+
+                                    location.reload();
+
+                                });
+                            } else {
+                                Swal.fire('Error', 'Hubo un problema al curar el Pokémon.', 'error');
+                            }
+                        },
+                        error: function () {
+                            Swal.fire('Error', 'Hubo un problema al curar el Pokémon.', 'error');
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+}
+

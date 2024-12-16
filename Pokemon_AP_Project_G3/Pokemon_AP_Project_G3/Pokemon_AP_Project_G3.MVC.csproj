@@ -131,6 +131,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PlayController.cs" />
+    <Compile Include="Controllers\PharmacyController.cs" />
     <Compile Include="Controllers\PokedexController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Global.asax.cs">
@@ -199,6 +200,7 @@
     <Content Include="Views\Play\Index.cshtml" />
     <Content Include="Views\Pokedex\Create.cshtml" />
     <Content Include="Views\Pokedex\Edit.cshtml" />
+    <Content Include="Views\Pharmacy\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

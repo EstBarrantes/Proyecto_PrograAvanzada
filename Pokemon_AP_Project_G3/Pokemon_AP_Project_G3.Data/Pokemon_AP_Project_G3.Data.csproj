@@ -67,6 +67,7 @@
     <Compile Include="Models\Base\BaseResponse.cs" />
     <Compile Include="Models\Entity\Pokemon.cs" />
     <Compile Include="Models\Message.cs" />
+    <Compile Include="Models\Querys\PharmacyQuery.cs" />
     <Compile Include="Models\Querys\PokedexQuery.cs" />
     <Compile Include="Models\Querys\TeamQuery.cs" />
     <Compile Include="Pokedex.cs">
@@ -92,6 +93,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\MessageRepository.cs" />
+    <Compile Include="Repository\PharmacyRepository.cs" />
     <Compile Include="Repository\PokedexRepository.cs" />
     <Compile Include="Repository\ChallengesRepository.cs" />
     <Compile Include="Repository\TeamRepository.cs" />

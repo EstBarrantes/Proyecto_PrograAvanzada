@@ -141,6 +141,27 @@ namespace Pokemon_AP_Project_G3.Controllers
             return Json(new { success = false, message = "Error adding new team" });
 
         }
+
+        [HttpPost]
+        public async Task<ActionResult> SendToPharmacy(int pokemonId)
+        {
+            var userID = Convert.ToInt32(Request.Cookies["UserID"].Value);
+
+
+            if ( pokemonId == 0)
+            {
+                return Json(new { success = false, message = "No Pokémon selected" });
+            }
+
+            var res = await _service.SendPokemonsToPharmacy(pokemonId, userID);
+
+            if (res.Success)
+            {
+                return Json(new { success = true });
+            }
+
+            return Json(new { success = false, message = "Error deleting Pokémon" });
+        }
     }
     public class TeamViewModel
     {
