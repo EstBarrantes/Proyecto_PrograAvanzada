@@ -36,7 +36,7 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
         //Pharmacy
         Task<BaseResponse<PharmacyQuery>> GetAllPokemonsInPharmacy();
         Task<BaseResponse<PharmacyQuery>> GetAllPokemonsInPharmacyFiltered(string pStatus = null);
-        Task<BaseResponse> HealPokemon(int pokemon, int pUserId);
+        Task<BaseResponse> HealPokemon(int attentionID);
 
     }
 
@@ -300,6 +300,7 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             return res;
         }
         #endregion
+
         #region Pharmacy
         public async Task<BaseResponse<PharmacyQuery>> GetAllPokemonsInPharmacy()
         {
@@ -335,12 +336,12 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
 
 
 
-        public async Task<BaseResponse> HealPokemon(int pokemon, int pUserId)
+        public async Task<BaseResponse> HealPokemon(int attentionID)
         {
             var res = new BaseResponse();
             try
             {
-                res = await _pharmacyPokedex.HealPokemon(pokemon, pUserId);
+                res = await _pharmacyPokedex.HealPokemon(attentionID);
             }
             catch (Exception ex)
             {

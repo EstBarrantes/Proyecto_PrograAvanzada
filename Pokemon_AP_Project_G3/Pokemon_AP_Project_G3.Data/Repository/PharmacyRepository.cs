@@ -15,7 +15,7 @@ namespace Pokemon_AP_Project_G3.Data.Repository
     {
         Task<BaseResponse<PharmacyQuery>> GetAllPokemonsInPharmacy();
         Task<BaseResponse<PharmacyQuery>> GetAllPokemonsInPharmacyFiltered(string pStatus = null);
-        Task<BaseResponse> HealPokemon(int pokemon, int pUserId);
+        Task<BaseResponse> HealPokemon(int attentionID);
     }
     public class PharmacyRepository : IPharmacyRepository
     {
@@ -90,14 +90,14 @@ namespace Pokemon_AP_Project_G3.Data.Repository
             return res;
         }
 
-        public async Task<BaseResponse> HealPokemon(int pokemonId, int pUserId)
+        public async Task<BaseResponse> HealPokemon(int attentionID)
         {
             var res = new BaseResponse();
             try
             {
                 var medicalRecord = await _context.Medical_Attention
                     .AsNoTracking()
-                    .FirstOrDefaultAsync(m => m.pokemon_id == pokemonId && m.user_id == pUserId);
+                    .FirstOrDefaultAsync(m => m.attention_id == attentionID);
 
                 if (medicalRecord == null)
                 {
@@ -118,6 +118,15 @@ namespace Pokemon_AP_Project_G3.Data.Repository
                     medicalRecord.attention_date = DateTime.Now;
 
                     _context.Medical_Attention.AddOrUpdate(medicalRecord);
+                    await _context.SaveChangesAsync();
+
+                    var pokedex = await _context.Pokedex
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync(m => m.pokemon_id == medicalRecord.pokemon_id && m.user_id == medicalRecord.user_id);
+
+                    pokedex.status = "Available";
+
+                    _context.Pokedex.AddOrUpdate(pokedex);
                     await _context.SaveChangesAsync();
                 });
 

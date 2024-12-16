@@ -48,7 +48,7 @@
                                 <span class="fw-bold ms-auto align-self-end">ID @pokedexEntry.attention_id</span>
                                 @if (pokedexEntry.status == "Pending")
                                 {
-                                    <button class="btn btn-success ms-auto" onclick="confirmHeal(@pokedexEntry.pokemon_id, @pokedexEntry.user_id)">Heal</button>
+                                    <button class="btn btn-success ms-auto" onclick="confirmHeal(@pokedexEntry.attention_id)">Heal</button>
                                 }
                             </div>
                         </div>
@@ -62,7 +62,7 @@
 
 @section Scripts {
     <script>
-        function confirmHeal(pokemonId, userId) {
+        function confirmHeal(attentionID) {
             Swal.fire({
                 title: '¿Seguro?',
                 text: '¿Seguro que curaras este Pokémon? (Tardara 5 segundos en curarse)',
@@ -75,7 +75,7 @@
                     $.ajax({
                         type: 'POST',
                         url: '@Url.Action("HealPokemon", "Pharmacy")',
-                        data: { pokemonId: pokemonId, userId: userId },
+                        data: { attentionID: attentionID},
                         success: function (response) {
                             if (response.success) {
                                 Swal.fire('Curado!', 'El Pokémon se está curando.', 'success').then(() => {
