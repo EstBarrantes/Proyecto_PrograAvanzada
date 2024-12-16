@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Pokemon_AP_Project_G3.Data;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Pokemon_AP_Project_G3.Controllers
 {
@@ -31,8 +33,8 @@ namespace Pokemon_AP_Project_G3.Controllers
                 ViewBag.Error = "El nombre de usuario y la contraseña son requeridos";
                 return View("Index");
             }
-
-            var user = _userrepository.GetUserByusernameAndPassword(username, password);
+            var hashedPassword = PasswordHasher.HashPassword(password);
+            var user = _userrepository.GetUserByusernameAndPassword(username, hashedPassword);
 
             if (user != null )
             {
@@ -88,6 +90,7 @@ namespace Pokemon_AP_Project_G3.Controllers
                 ViewBag.Error = "El usuario ya fue registrado.";
                 return View();
             }
+            var hashedPassword = PasswordHasher.HashPassword(password);
 
             var user = new Users
             {
@@ -95,7 +98,7 @@ namespace Pokemon_AP_Project_G3.Controllers
                 name = nombre,
                 gender = gender,
                 role = role,
-                password_hash = password, 
+                password_hash = hashedPassword,
                 registration_date = DateTime.Now
             };
 
