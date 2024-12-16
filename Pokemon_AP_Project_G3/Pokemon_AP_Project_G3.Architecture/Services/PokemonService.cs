@@ -40,9 +40,9 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
 
     }
 
-    public class PokemonService: IPokemonService
+    public class PokemonService : IPokemonService
     {
-        private readonly ITeamRepository  _repositoryTeam;
+        private readonly ITeamRepository _repositoryTeam;
         private readonly IPokedexRepository _repositoryPokedex;
         private readonly IChallengesRepository _repositoryChallenges;
         private readonly IPharmacyRepository _pharmacyPokedex;
@@ -62,7 +62,7 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             {
                 res = await _repositoryTeam.GetTeamsByUserId(pUserId);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 res.ErrorMessage = $"{ex.Message} - Service";
                 res.Success = false;
@@ -108,7 +108,7 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             var res = new BaseResponse();
             try
             {
-                res = await _repositoryTeam.AddPokemonsToPokedex(pokemons,pUserId);
+                res = await _repositoryTeam.AddPokemonsToPokedex(pokemons, pUserId);
             }
             catch (Exception ex)
             {
@@ -216,7 +216,7 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             var res = new BaseResponse<Pokemon>();
             try
             {
-                res = await _repositoryPokedex.GetAllPokemonsFiltered(pName,pType,pWeight);
+                res = await _repositoryPokedex.GetAllPokemonsFiltered(pName, pType, pWeight);
             }
             catch (Exception ex)
             {
@@ -227,7 +227,7 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             return res;
         }
 
-       
+
 
         public async Task<BaseResponse> DeletePokemon(int pokemonID)
         {
@@ -251,7 +251,7 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             {
                 if (pokemon.pokemon_id == 0)
                 {
-                   res = await _repositoryPokedex.AddPokemon(pokemon);
+                    res = await _repositoryPokedex.AddPokemon(pokemon);
                 }
                 else
                 {
@@ -271,6 +271,35 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
 
         #region Challenges
         public async Task<BaseResponse> CreateChallenge(int challengerId, int challengedId, string status)
+        {
+            var res = new BaseResponse();
+            try
+            {
+                res = await _repositoryChallenges.CreateChallenge(challengerId, challengedId, status);
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - Service";
+                res.Success = false;
+            }
+            return res;
+        }
+
+        public async Task<BaseResponse> UpdateChallengeStatus(int challengeId, string newStatus)
+        {
+            var res = new BaseResponse();
+            try
+            {
+                res = await _repositoryChallenges.UpdateChallengeStatus(challengeId, newStatus);
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - Service";
+                res.Success = false;
+            }
+            return res;
+        }
+        #endregion
         #region Pharmacy
         public async Task<BaseResponse<PharmacyQuery>> GetAllPokemonsInPharmacy()
         {
@@ -311,7 +340,7 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             var res = new BaseResponse();
             try
             {
-                res = await _repositoryChallenges.CreateChallenge(challengerId, challengedId, status);
+                res = await _pharmacyPokedex.HealPokemon(pokemon, pUserId);
             }
             catch (Exception ex)
             {
@@ -320,22 +349,8 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             }
             return res;
         }
-        public async Task<BaseResponse> UpdateChallengeStatus(int challengeId, string newStatus)
-        {
-            var res = new BaseResponse();
-            try
-            {
-                res = await _repositoryChallenges.UpdateChallengeStatus(challengeId,newStatus);
-                res = await _pharmacyPokedex.HealPokemon(pokemon,pUserId);
-            }
-            catch (Exception ex)
-            {
-                res.ErrorMessage = $"{ex.Message} - Service";
-                res.Success = false;
-            }
-            return res;
-        }
-               
+
+
 
 
         #endregion
