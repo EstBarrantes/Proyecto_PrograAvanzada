@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-md-3 mb-2">
                         <select name="type" class="form-control">
-                            <option value="">All Types</option>
+                            <option value="">All types</option>
                             <option value="Normal">Normal</option>
                             <option value="Fire">Fire</option>
                             <option value="Water">Water</option>
@@ -49,7 +49,7 @@
                         </select>
                     </div>
                     <div class="col-md-3 mb-2">
-                        <input type="text" id="weight" name="weight" class="form-control" placeholder="Weight (kg)" onkeyup="formatoNumeros2(this);" onkeydown="ValidarNumeros(event);" />
+                        <input type="text" id="weight" name="weight" class="form-control" placeholder="weight (Kg)" onkeyup="formatoNumeros2(this);" onkeydown="ValidarNumeros(event);" />
                     </div>
                     <div class="col-md-3 mb-2">
                         <button type="submit" class="btn btn-primary">Filter</button>
@@ -67,7 +67,7 @@
                                     <img src="@pokedexEntry.img_url_enemy" alt="@pokedexEntry.name" class="img-thumbnail me-3" style="width: 50px; height: 50px;">
                                     <div>
                                         <h5 class="m-0">@pokedexEntry.name</h5>
-                                        <small class="text-muted">Weight: @pokedexEntry.weight kg | Type: @pokedexEntry.type</small>
+                                        <small class="text-muted">Peso: @pokedexEntry.weight kg | Tipo: @pokedexEntry.type</small>
                                     </div>
                                 </div>
                                 <span class="fw-bold ms-auto align-self-end">ID @pokedexEntry.pokemon_id</span>

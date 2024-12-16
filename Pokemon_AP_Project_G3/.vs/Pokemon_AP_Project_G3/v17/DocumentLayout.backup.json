@@ -1,22 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\dchav\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\",
+  "WorkspaceRootPath": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n Avanzada\\Proyecto\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|c:\\users\\dchav\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3.data\\repository\\pharmacyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|solutionrelative:pokemon_ap_project_g3.data\\repository\\pharmacyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|c:\\users\\usuario\\desktop\\programaci\u00F3n avanzada\\proyecto\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9EEEA03-DEC8-48E8-8777-4C8906A7817F}|Pokemon_AP_Project_G3.Architecture\\Pokemon_AP_Project_G3.Architecture.csproj|c:\\users\\dchav\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3.architecture\\services\\pokemonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9EEEA03-DEC8-48E8-8777-4C8906A7817F}|Pokemon_AP_Project_G3.Architecture\\Pokemon_AP_Project_G3.Architecture.csproj|solutionrelative:pokemon_ap_project_g3.architecture\\services\\pokemonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|c:\\users\\usuario\\desktop\\programaci\u00F3n avanzada\\proyecto\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|c:\\users\\dchav\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3\\controllers\\pharmacycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\controllers\\pharmacycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|c:\\users\\usuario\\desktop\\programaci\u00F3n avanzada\\proyecto\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|c:\\users\\dchav\\documents\\github\\proyecto_prograavanzada\\pokemon_ap_project_g3\\pokemon_ap_project_g3\\views\\pharmacy\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\views\\pharmacy\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n Avanzada\\Proyecto\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3.data\\repository\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BC6134D-D451-409B-9861-8D011C8F4A14}|Pokemon_AP_Project_G3.Data\\Pokemon_AP_Project_G3.Data.csproj|solutionrelative:pokemon_ap_project_g3.data\\repository\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n Avanzada\\Proyecto\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\pokemon_ap_project_g3\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9F29FCF4-16A1-4A05-B297-0B85F58CE0AD}|Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.MVC.csproj|solutionrelative:pokemon_ap_project_g3\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +30,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 26,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n Avanzada\\Proyecto\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Web.config",
+              "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Web.config",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n Avanzada\\Proyecto\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Web.config",
+              "RelativeToolTip": "Pokemon_AP_Project_G3\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAACWAQAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-12-16T23:16:18.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n Avanzada\\Proyecto\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Web.config",
+              "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Views\\Web.config",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n Avanzada\\Proyecto\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Web.config",
+              "RelativeToolTip": "Pokemon_AP_Project_G3\\Views\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-12-16T23:12:59.862Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{809f6ff3-8092-454a-8003-6d4091f9b5bb}"
@@ -114,6 +144,10 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:12:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
             },
             {
@@ -123,54 +157,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\dchav\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Pharmacy\\Index.cshtml",
-              "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Views\\Pharmacy\\Index.cshtml",
-              "ToolTip": "C:\\Users\\dchav\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Pharmacy\\Index.cshtml",
-              "RelativeToolTip": "Pokemon_AP_Project_G3\\Views\\Pharmacy\\Index.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAEAAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-16T18:38:44.725Z",
-              "EditorCaption": ""
+              "Title": "PasswordHasher.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n Avanzada\\Proyecto\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\PasswordHasher.cs",
+              "RelativeDocumentMoniker": "Pokemon_AP_Project_G3.Data\\Repository\\PasswordHasher.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n Avanzada\\Proyecto\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\PasswordHasher.cs",
+              "RelativeToolTip": "Pokemon_AP_Project_G3.Data\\Repository\\PasswordHasher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T22:42:13.884Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PharmacyController.cs",
-              "DocumentMoniker": "C:\\Users\\dchav\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\PharmacyController.cs",
-              "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Controllers\\PharmacyController.cs",
-              "ToolTip": "C:\\Users\\dchav\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\PharmacyController.cs",
-              "RelativeToolTip": "Pokemon_AP_Project_G3\\Controllers\\PharmacyController.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAApwEYAAAA8AAAAAAAAAA==",
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n Avanzada\\Proyecto\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n Avanzada\\Proyecto\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Pokemon_AP_Project_G3\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T18:38:38.863Z",
+              "WhenOpened": "2024-12-16T22:33:13.752Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PokemonService.cs",
-              "DocumentMoniker": "C:\\Users\\dchav\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Architecture\\Services\\PokemonService.cs",
-              "RelativeDocumentMoniker": "Pokemon_AP_Project_G3.Architecture\\Services\\PokemonService.cs",
-              "ToolTip": "C:\\Users\\dchav\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Architecture\\Services\\PokemonService.cs",
-              "RelativeToolTip": "Pokemon_AP_Project_G3.Architecture\\Services\\PokemonService.cs",
-              "ViewState": "AgIAADcBAAAAAAAAAAApwFcBAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T18:38:30.902Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PharmacyRepository.cs",
-              "DocumentMoniker": "C:\\Users\\dchav\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\PharmacyRepository.cs",
-              "RelativeDocumentMoniker": "Pokemon_AP_Project_G3.Data\\Repository\\PharmacyRepository.cs",
-              "ToolTip": "C:\\Users\\dchav\\Documents\\GitHub\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3.Data\\Repository\\PharmacyRepository.cs",
-              "RelativeToolTip": "Pokemon_AP_Project_G3.Data\\Repository\\PharmacyRepository.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAuwH4AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T18:38:01.339Z",
-              "EditorCaption": ""
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n Avanzada\\Proyecto\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Login\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pokemon_AP_Project_G3\\Views\\Login\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n Avanzada\\Proyecto\\Proyecto_PrograAvanzada\\Pokemon_AP_Project_G3\\Pokemon_AP_Project_G3\\Views\\Login\\Index.cshtml",
+              "RelativeToolTip": "Pokemon_AP_Project_G3\\Views\\Login\\Index.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAswBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-16T22:12:43.677Z"
             }
           ]
         },
