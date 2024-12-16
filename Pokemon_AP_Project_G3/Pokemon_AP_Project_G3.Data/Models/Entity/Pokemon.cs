@@ -9,7 +9,7 @@ namespace Pokemon_AP_Project_G3.Data
 {
     public partial class Pokemon
     {
-        public int HP { get; set; }
+        public int HP { get; set; } = 100;
         public int Attack { get; set; }
         public int Defense { get; set; }
 

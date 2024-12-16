@@ -29,16 +29,21 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
         Task<BaseResponse> AddOrUpdatePokemon(Pokemon pokemon);
         Task<BaseResponse<Pokemon>> GetAllPokemonsFiltered(string pName = null, string pType = null, string pWeight = null);
 
+        //Challenges
+        Task<BaseResponse> CreateChallenge(int challengerId, int challengedId, string status);
+        Task<BaseResponse> UpdateChallengeStatus(int challengeId, string newStatus);
     }
 
     public class PokemonService: IPokemonService
     {
         private readonly ITeamRepository  _repositoryTeam;
         private readonly IPokedexRepository _repositoryPokedex;
+        private readonly IChallengesRepository _repositoryChallenges;
         public PokemonService()
         {
             _repositoryTeam = new TeamRepository();
             _repositoryPokedex = new PokedexRepository();
+            _repositoryChallenges = new ChallengesRepository();
         }
 
         #region Team Builder
@@ -239,6 +244,37 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
         }
 
 
+        #endregion
+
+        #region Challenges
+        public async Task<BaseResponse> CreateChallenge(int challengerId, int challengedId, string status)
+        {
+            var res = new BaseResponse();
+            try
+            {
+                res = await _repositoryChallenges.CreateChallenge(challengerId, challengedId, status);
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - Service";
+                res.Success = false;
+            }
+            return res;
+        }
+        public async Task<BaseResponse> UpdateChallengeStatus(int challengeId, string newStatus)
+        {
+            var res = new BaseResponse();
+            try
+            {
+                res = await _repositoryChallenges.UpdateChallengeStatus(challengeId,newStatus);
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - Service";
+                res.Success = false;
+            }
+            return res;
+        }
         #endregion
     }
 }

@@ -6,6 +6,17 @@ GO
 INSERT INTO Users (name, username, password_hash,gender, role, registration_date)
 VALUES ('David Chaves', 'eldeiv7', 'ICy5YqxZB1uWSwcVLSNLcA==', 'Masculine','Administrator', GETDATE());
 
+INSERT INTO Users (name, username, password_hash,gender, role, registration_date)
+VALUES ('Denis', 'chromals', 'test', 'Masculine','Administrator', GETDATE());
+
+SET IDENTITY_INSERT dbo.Users ON;
+
+INSERT INTO dbo.Users (user_id, name, username, password_hash, gender, role, registration_date)
+VALUES (404, 'Maquina', 'maquina', 'maquina', 'Masculine', 'Trainer', GETDATE());
+
+SET IDENTITY_INSERT dbo.Users OFF;
+GO
+
 -- Obtener el user_id del usuario creado
 DECLARE @AdminUserId INT;
 SET @AdminUserId = SCOPE_IDENTITY();

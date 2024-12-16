@@ -50,15 +50,21 @@ else
         }
     </div>
 
-    <form action="/Play/StartBattle" method="post" class="ms-auto">
-        <button type="submit"class="btn btn-success" style="width: 80px; height: 40px;">
+    @*<form action="/Play/StartBattle" method="post" class="ms-auto">
+        <button type="submit" class="btn btn-success" style="width: 80px; height: 40px;">
             Empezar Batalla
         </button>
     </form>
+    <hr />*@
+    <button type="button" class="btn btn-success" onclick="startBattle()">
+        Empezar Batalla 
+    </button>
+    <hr />
     <div id="battleArea" style="display:none;">
         <h3>Battle Against the Machine</h3>
-        <div id="playerPokemonInfo"></div>
+
         <div id="enemyPokemonInfo"></div>
+        <div id="playerPokemonInfo"></div>
         <button class="btn btn-danger" onclick="attack()">Attack</button>
         <button class="btn btn-warning" onclick="flee()">Flee</button>
         <div id="battleResult"></div>
@@ -73,14 +79,23 @@ else
             url: '@Url.Action("StartBattle", "Play")',
             //url: '/Play/StartBattle',
             type: 'POST',
-            data: { teamID: 1 },
             success: function(response) {
                 if (response.success) {
                     $('#battleArea').show();
-                    $('#playerPokemonInfo').html('Your Pokémon: ' + response.playerPokemon.name);
-                    $('#enemyPokemonInfo').html('Enemy Pokémon: ' + response.enemyPokemon.name);
+                    $('#playerPokemonInfo').html(
+                        `<h4>Tu Pokemon</h4>
+                    <p>Name: ${response.playerPokemon.name}</p>
+                    <img src="${response.playerPokemon.img_url}" alt="${response.playerPokemon.name}" style="width: 100px;">
+                    <p>HP: ${response.playerPokemon.hp}</p>`
+                    );
+                    $('#enemyPokemonInfo').html(
+                        `<h4>Pokemon Enemigo</h4>
+                    <p>Name: ${response.enemyPokemon.name}</p>
+                    <img src="${response.enemyPokemon.img_url}" alt="${response.enemyPokemon.name}" style="width: 100px;">
+                    <p>HP: ${response.enemyPokemon.hp}</p>`
+                    );
                 } else {
-                    alert(response.message);
+                    Swal.fire( response.message);
                 }
             },
             error: function () {
@@ -97,16 +112,35 @@ else
             success: function(response) {
                 if (response.success) {
                     $('#battleResult').html(response.message);
+
+                    if (response.playerPokemon) {
+                        $('#playerPokemonInfo').html(
+                            `<h4>Tu Pokemon</h4>
+                        <p>Name: ${response.playerPokemon.name}</p>
+                        <img src="${response.playerPokemon.img_url}" alt="${response.playerPokemon.name}" style="width: 100px;">
+                        <p>HP: ${response.playerPokemon.hp}</p>`
+                        );
+                    }
+
+                    if (response.enemyPokemon) {
+                        $('#enemyPokemonInfo').html(
+                            `<h4>Pokemon Enemigo</h4>
+                        <p>Name: ${response.enemyPokemon.name}</p>
+                        <img src="${response.enemyPokemon.img_url}" alt="${response.enemyPokemon.name}" style="width: 100px;">
+                        <p>HP: ${response.enemyPokemon.hp}</p>`
+                        );
+                    }
+
                     if (response.gameOver) {
+                        Swal.fire('Batalla', `${response.winner} gano la batalla!`, 'success');
                         $('#battleArea').hide();
-                        alert(response.winner + ' wins!');
                     }
                 } else {
-                    alert('Error during attack.');
+                    Swal.fire('Error', 'Error al atacar', 'error');
                 }
             },
             error: function() {
-                alert('Error during attack.');
+                Swal.fire('Error', 'Error al atacar', 'error');
             }
         });
     }
@@ -115,16 +149,16 @@ else
         $.ajax({
             url: '@Url.Action("Flee", "Play")',
             type: 'POST',
-            success: function(response) {
+            success: function (response) {
                 if (response.success) {
-                    $('#battleResult').html('You fled! You lose the battle.');
+                    Swal.fire('Batalla', 'Huiste! Perdiste la batalla :/', 'warning');
                     $('#battleArea').hide();
                 } else {
-                    alert('Error fleeing.');
+                    Swal.fire('Error', 'Error al huir', 'error');
                 }
             },
             error: function() {
-                alert('Error fleeing.');
+                Swal.fire('Error', 'Error al huir', 'error');
             }
         });
     }
