@@ -81,7 +81,7 @@ CREATE TABLE Challenges (
 );
 
 -- Table Medical_Attention
-CREATE TABLE Medical_Attention (
+CREATE TABLE R (
     attention_id INT PRIMARY KEY IDENTITY,
     user_id INT FOREIGN KEY REFERENCES Users(user_id),
     pokemon_id INT FOREIGN KEY REFERENCES Pokemon(pokemon_id),

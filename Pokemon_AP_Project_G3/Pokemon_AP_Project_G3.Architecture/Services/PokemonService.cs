@@ -19,6 +19,7 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
         Task<BaseResponse<Pokemon>> GetPokemonsNotOwned(int pUserId);
         Task<BaseResponse> AddPokemonsToPokedex(List<int> pokemons, int pUserId);
         Task<BaseResponse> DeletePokemonsToPokedex(int pokemon, int pUserId);
+        Task<BaseResponse> SendPokemonsToPharmacy(int pokemon, int pUserId);
         Task<BaseResponse<Pokemon>> GetPokemon(int pPokemonId);
         Task<BaseResponse> AddEditTeam(List<int> pokemons, int pUserId, int pTeamId);
 
@@ -29,16 +30,23 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
         Task<BaseResponse> AddOrUpdatePokemon(Pokemon pokemon);
         Task<BaseResponse<Pokemon>> GetAllPokemonsFiltered(string pName = null, string pType = null, string pWeight = null);
 
+        //Pharmacy
+        Task<BaseResponse<PharmacyQuery>> GetAllPokemonsInPharmacy();
+        Task<BaseResponse<PharmacyQuery>> GetAllPokemonsInPharmacyFiltered(string pStatus = null);
+        Task<BaseResponse> HealPokemon(int pokemon, int pUserId);
+
     }
 
     public class PokemonService: IPokemonService
     {
         private readonly ITeamRepository  _repositoryTeam;
         private readonly IPokedexRepository _repositoryPokedex;
+        private readonly IPharmacyRepository _pharmacyPokedex;
         public PokemonService()
         {
             _repositoryTeam = new TeamRepository();
             _repositoryPokedex = new PokedexRepository();
+            _pharmacyPokedex = new PharmacyRepository();
         }
 
         #region Team Builder
@@ -111,6 +119,21 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             try
             {
                 res = await _repositoryTeam.DeletePokemonsToPokedex(pokemon, pUserId);
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - Service";
+                res.Success = false;
+            }
+            return res;
+        }
+
+        public async Task<BaseResponse> SendPokemonsToPharmacy(int pokemon, int pUserId)
+        {
+            var res = new BaseResponse();
+            try
+            {
+                res = await _repositoryTeam.SendPokemonsToPharmacy(pokemon, pUserId);
             }
             catch (Exception ex)
             {
@@ -237,6 +260,60 @@ namespace Pokemon_AP_Project_G3.Architecture.Services
             }
             return res;
         }
+
+
+        #endregion
+
+        #region Pharmacy
+        public async Task<BaseResponse<PharmacyQuery>> GetAllPokemonsInPharmacy()
+        {
+            var res = new BaseResponse<PharmacyQuery>();
+            try
+            {
+                res = await _pharmacyPokedex.GetAllPokemonsInPharmacy();
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - Service";
+                res.Success = false;
+                res.List = new List<PharmacyQuery>();
+            }
+            return res;
+        }
+
+        public async Task<BaseResponse<PharmacyQuery>> GetAllPokemonsInPharmacyFiltered(string pStatus = null)
+        {
+            var res = new BaseResponse<PharmacyQuery>();
+            try
+            {
+                res = await _pharmacyPokedex.GetAllPokemonsInPharmacyFiltered(pStatus);
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - Service";
+                res.Success = false;
+                res.List = new List<PharmacyQuery>();
+            }
+            return res;
+        }
+
+
+
+        public async Task<BaseResponse> HealPokemon(int pokemon, int pUserId)
+        {
+            var res = new BaseResponse();
+            try
+            {
+                res = await _pharmacyPokedex.HealPokemon(pokemon,pUserId);
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - Service";
+                res.Success = false;
+            }
+            return res;
+        }
+               
 
 
         #endregion

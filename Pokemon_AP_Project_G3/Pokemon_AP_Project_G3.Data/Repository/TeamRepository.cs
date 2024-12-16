@@ -16,6 +16,8 @@ namespace Pokemon_AP_Project_G3.Data.Repository
         Task<BaseResponse<Pokemon>> GetPokemonsNotOwned(int pUserId);
         Task<BaseResponse> AddPokemonsToPokedex(List<int> pokemons, int pUserId);
         Task<BaseResponse> DeletePokemonsToPokedex(int pokemon, int pUserId);
+        Task<BaseResponse> SendPokemonsToPharmacy(int pokemon, int pUserId);
+
         Task<BaseResponse<Pokemon>> GetPokemon(int pPokemonId);
         Task<BaseResponse> AddEditTeam(List<int> pokemons, int pUserId, int pTeamId);
     }
@@ -101,19 +103,28 @@ namespace Pokemon_AP_Project_G3.Data.Repository
                                              }
                                          }).ToListAsync();
 
-                res.List = pokedexData.Select(p => new PokedexQuery
+                var medicalAttentionData = await (from m in _context.Medical_Attention
+                                                  where m.status == "Pending" || m.status == "In Progress"
+                                                  select new { m.user_id, m.pokemon_id }).ToListAsync();
+
+                res.List = pokedexData.Select(p =>
                 {
-                    PokedexId = p.PokedexId,
-                    UserId = p.UserId,
-                    Status = p.Status,
-                    Pokemon = new Pokemon
+                    var inPharmacy = medicalAttentionData.Any(m => m.user_id == p.UserId && m.pokemon_id == p.Pokemon.pokemon_id);
+
+                    return new PokedexQuery
                     {
-                        pokemon_id = p.Pokemon.pokemon_id,
-                        name = p.Pokemon.name,
-                        type = p.Pokemon.type,
-                        weight = p.Pokemon.weight,
-                        img_url_enemy = p.Pokemon.img_url_enemy
-                    }
+                        PokedexId = p.PokedexId,
+                        UserId = p.UserId,
+                        Status = inPharmacy ? "In Pharmacy" : p.Status,
+                        Pokemon = new Pokemon
+                        {
+                            pokemon_id = p.Pokemon.pokemon_id,
+                            name = p.Pokemon.name,
+                            type = p.Pokemon.type,
+                            weight = p.Pokemon.weight,
+                            img_url_enemy = p.Pokemon.img_url_enemy
+                        }
+                    };
                 }).OrderBy(x => x.Pokemon.pokemon_id).ToList();
 
                 res.ErrorMessage = "";
@@ -139,8 +150,8 @@ namespace Pokemon_AP_Project_G3.Data.Repository
                                                         .ToListAsync();
 
                 var pokemonsNotOwned = await _context.Pokemon
-                    .Where(p => !ownedPokemonIds.Contains(p.pokemon_id)) 
-                    .Select(p => new 
+                    .Where(p => !ownedPokemonIds.Contains(p.pokemon_id))
+                    .Select(p => new
                     {
                         pokemon_id = p.pokemon_id,
                         name = p.name,
@@ -157,7 +168,7 @@ namespace Pokemon_AP_Project_G3.Data.Repository
                     type = p.type,
                     weight = p.weight,
                     img_url_enemy = p.img_url_enemy
-                }).OrderBy(x => x.pokemon_id).ToList(); 
+                }).OrderBy(x => x.pokemon_id).ToList();
 
                 res.ErrorMessage = "";
                 res.Success = true;
@@ -178,8 +189,9 @@ namespace Pokemon_AP_Project_G3.Data.Repository
             {
                 foreach (var pokemon in pokemons)
                 {
-                    var pokedex = new Pokedex() { 
-                        pokedex_id = _context.Pokedex.Max(x => x.pokedex_id)+1,
+                    var pokedex = new Pokedex()
+                    {
+                        pokedex_id = _context.Pokedex.Max(x => x.pokedex_id) + 1,
                         pokemon_id = pokemon,
                         status = "Available",
                         user_id = pUserId
@@ -218,6 +230,34 @@ namespace Pokemon_AP_Project_G3.Data.Repository
                     res.Success = false;
                     res.ErrorMessage = "Pokémon no encontrado.";
                 }
+            }
+            catch (Exception ex)
+            {
+                res.ErrorMessage = $"{ex.Message} - TeamRepository";
+                res.Success = false;
+            }
+            return res;
+        }
+
+        public async Task<BaseResponse> SendPokemonsToPharmacy(int pokemon, int pUserId)
+        {
+            var res = new BaseResponse();
+            try
+            {
+                var req = new Medical_Attention()
+                {
+                    pokemon_id = pokemon,
+                    user_id = pUserId,
+                    request_date = DateTime.Now,
+                    attention_id = _context.Medical_Attention.Count() != 0 ? _context.Medical_Attention.Max(x => x.attention_id) + 1 : 1,
+                    status = "Pending"
+                };
+
+                _context.Medical_Attention.AddOrUpdate(req);
+                await _context.SaveChangesAsync();
+
+                res.ErrorMessage = "";
+                res.Success = true;
             }
             catch (Exception ex)
             {
@@ -270,7 +310,7 @@ namespace Pokemon_AP_Project_G3.Data.Repository
                     {
                         var teamPokemon = existingTeamPokemons[i];
                         teamPokemon.pokemon_id = pokemons[i];
-                        teamPokemon.position = i; 
+                        teamPokemon.position = i;
                         _context.Team_Pokemon.AddOrUpdate(teamPokemon);
                     }
                 }

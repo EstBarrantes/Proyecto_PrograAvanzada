@@ -51,7 +51,7 @@ namespace Pokemon_AP_Project_G3.Controllers
         [HttpPost]
         public ActionResult Send(string receiverUsername, string content)
         {
-            string senderUsername = User.Identity.Name; 
+            string senderUsername = Request.Cookies["UserName"].Value; 
 
             if (!string.IsNullOrEmpty(content) && !string.IsNullOrEmpty(receiverUsername))
             {

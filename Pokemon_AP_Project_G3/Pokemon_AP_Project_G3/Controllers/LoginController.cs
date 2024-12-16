@@ -46,8 +46,14 @@ namespace Pokemon_AP_Project_G3.Controllers
                     Expires = DateTime.Now.AddHours(1),
                     HttpOnly = true
                 };
+                HttpCookie messCookie = new HttpCookie("UserName", user.username)
+                {
+                    Expires = DateTime.Now.AddHours(1),
+                    HttpOnly = true
+                };
                 Response.Cookies.Add(authCookie);
                 Response.Cookies.Add(secCookie);
+                Response.Cookies.Add(messCookie);
 
                 return RedirectToAction("Index", "Home");
             }

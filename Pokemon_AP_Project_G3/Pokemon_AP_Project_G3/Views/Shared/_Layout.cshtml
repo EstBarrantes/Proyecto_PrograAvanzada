@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Pokemon APP G3</title>
@@ -19,17 +19,29 @@
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Team Builder", "Index", "Team", new { area = "" }, new { @class = "nav-link" })</li>
+                    @if (Request.Cookies["UserRole"].Value == "Trainer")
+                    {
+                        <li>@Html.ActionLink("Team Builder", "Index", "Team", new { area = "" }, new { @class = "nav-link" })</li>
+                    }
+                    @if (Request.Cookies["UserRole"].Value == "Nurse")
+                    {
+                        <li>@Html.ActionLink("Pharmacy", "Index", "Pharmacy", new { area = "" }, new { @class = "nav-link" })</li>
+                    }
+                    @if (Request.Cookies["UserRole"].Value == "Administrator")
+                    {
+                        <li>@Html.ActionLink("Users", "Index", "Users", new { area = "" }, new { @class = "nav-link" })</li>
+                    }
                     <li>@Html.ActionLink("Pokedex", "Index", "Pokedex", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Play", "Index", "Play", new { area = "" }, new { @class = "nav-link" })</li>
-                        @if (Request.Cookies["UserID"] != null)
-                        {
-                            <li class="nav-item">
-                                <form method="post" action="/Login/Logoff" style="display:inline;">
-                                    <button type="submit" class="btn btn-link nav-link" style="color:white;">Logoff</button>
-                                </form>
-                            </li>
-                        }
+                    @if (Request.Cookies["UserID"] != null)
+                    {
+                        <li class="nav-item">
+                            <form method="post" action="/Login/Logoff" style="display:inline;">
+                                <button type="submit" class="btn btn-link nav-link" style="color:white;">Logoff</button>
+                            </form>
+                        </li>
+                    }
+
 
 
                 </ul>
