@@ -59,7 +59,6 @@ namespace Pokemon_AP_Project_G3.Controllers
 
             // Guardar el equipo seleccionado en session
             Session["SelectedTeam"] = JsonConvert.SerializeObject(selectedTeam);
-            //HttpContext.Session.Add("SelectedTeam", JsonConvert.SerializeObject(selectedTeam));
 
             TempData["Message"] = $"Team seleccionado Correctamente!";
             // Redirigir a la pantalla de batalla
