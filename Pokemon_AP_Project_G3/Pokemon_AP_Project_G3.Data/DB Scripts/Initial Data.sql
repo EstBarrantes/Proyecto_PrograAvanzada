@@ -4,10 +4,10 @@ GO
 
 -- Insertar usuario con rol Administrador
 INSERT INTO Users (name, username, password_hash,gender, role, registration_date)
-VALUES ('David Chaves', 'eldeiv7', 'ICy5YqxZB1uWSwcVLSNLcA==', 'Masculine','Administrator', GETDATE());
+VALUES ('David Chaves', 'eldeiv7', '123', 'Masculine','Trainer', GETDATE());
 
 INSERT INTO Users (name, username, password_hash,gender, role, registration_date)
-VALUES ('Denis', 'chromals', 'test', 'Masculine','Administrator', GETDATE());
+VALUES ('David Chaves Adm', 'eldeiv7adm', '123', 'Masculine','Administrator', GETDATE());
 
 SET IDENTITY_INSERT dbo.Users ON;
 

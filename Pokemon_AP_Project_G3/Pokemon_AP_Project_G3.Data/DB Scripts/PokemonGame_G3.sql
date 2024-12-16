@@ -1,3 +1,6 @@
+-- DROP DATABASE
+DROP DATABASE PokemonGame;
+GO
 
 -- Create the database
 CREATE DATABASE PokemonGame;
@@ -81,7 +84,7 @@ CREATE TABLE Challenges (
 );
 
 -- Table Medical_Attention
-CREATE TABLE R (
+CREATE TABLE Medical_Attention (
     attention_id INT PRIMARY KEY IDENTITY,
     user_id INT FOREIGN KEY REFERENCES Users(user_id),
     pokemon_id INT FOREIGN KEY REFERENCES Pokemon(pokemon_id),

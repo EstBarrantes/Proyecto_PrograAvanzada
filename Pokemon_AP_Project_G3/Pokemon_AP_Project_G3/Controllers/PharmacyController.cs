@@ -60,15 +60,15 @@ namespace Pokemon_AP_Project_G3.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> HealPokemon(int pokemonId, int userID)
+        public async Task<ActionResult> HealPokemon(int attentionID)
         {
             
-            if (pokemonId == 0)
+            if (attentionID == 0)
             {
                 return Json(new { success = false, message = "No Pokémon selected" });
             }
 
-            var res = await _service.HealPokemon(pokemonId, userID);
+            var res = await _service.HealPokemon(attentionID);
 
             if (res.Success)
             {
