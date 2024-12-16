@@ -65,6 +65,7 @@
       <DependentUpon>Pokemon_APP_ADO.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Base\BaseResponse.cs" />
+    <Compile Include="Models\Entity\Pokemon.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Querys\PokedexQuery.cs" />
     <Compile Include="Models\Querys\TeamQuery.cs" />

@@ -132,7 +132,6 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PlayController.cs" />
     <Compile Include="Controllers\PokedexController.cs" />
-    <Compile Include="Controllers\POKEMONTESTController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -200,11 +199,6 @@
     <Content Include="Views\Play\Index.cshtml" />
     <Content Include="Views\Pokedex\Create.cshtml" />
     <Content Include="Views\Pokedex\Edit.cshtml" />
-    <Content Include="Views\POKEMONTEST\Create.cshtml" />
-    <Content Include="Views\POKEMONTEST\Delete.cshtml" />
-    <Content Include="Views\POKEMONTEST\Details.cshtml" />
-    <Content Include="Views\POKEMONTEST\Edit.cshtml" />
-    <Content Include="Views\POKEMONTEST\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

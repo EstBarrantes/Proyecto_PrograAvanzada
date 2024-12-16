@@ -1,17 +1,131 @@
-﻿
+﻿@using Pokemon_AP_Project_G3.Controllers
+@model PlayViewModel
+
 @{
-    Layout = null;
+    ViewBag.Title = "Play";
+    int teamIndex = 1;
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
+@if (!Model.Teams.Any())
+{
+    <div class="alert alert-warning">
+        No tienes equipos creados. Por favor, crea un equipo primero.
+        <a href="@Url.Action("Index", "Team")" class="btn btn-primary">Crear equipo</a>
     </div>
-</body>
-</html>
+}
+else
+{
+    if (ViewBag.Error != null)
+    {
+        <p style="color: red;">@ViewBag.Error</p>
+    }
+    if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Message"]
+        </div>
+    }
+    <h3 class="mb-3">Seleccione un Equipo Para Jugar</h3>
+    <div>
+        @foreach (var team in Model.Teams)
+        {
+            <div class="mb-3 p-3 shadow bg-white rounded">
+                <div class="d-flex align-items-center">
+                    <span class="fw-bold me-3">Team @teamIndex</span>
+                    <div class="d-flex">
+                        @foreach (var pokemon in team.TeamPokemons)
+                        {
+                            <img src="@pokemon.img_url_enemy" alt="@pokemon.name" class="img-thumbnail me-2" style="width: 50px; height: 50px;">
+                        }
+                    </div>
+                    <form action="/Play/SelectTeam" method="post" class="ms-auto">
+                        <input type="hidden" name="teamId" value="@team.TeamId" />
+                        <button type="submit" class="btn btn-sm btn-primary" style="width: 80px; height: 40px;">
+                            Select
+                        </button>
+                    </form>
+                </div>
+            </div>
+            teamIndex++;
+        }
+    </div>
+
+    <form action="/Play/StartBattle" method="post" class="ms-auto">
+        <button type="submit"class="btn btn-success" style="width: 80px; height: 40px;">
+            Empezar Batalla
+        </button>
+    </form>
+    <div id="battleArea" style="display:none;">
+        <h3>Battle Against the Machine</h3>
+        <div id="playerPokemonInfo"></div>
+        <div id="enemyPokemonInfo"></div>
+        <button class="btn btn-danger" onclick="attack()">Attack</button>
+        <button class="btn btn-warning" onclick="flee()">Flee</button>
+        <div id="battleResult"></div>
+    </div>
+}
+
+<script>
+    function startBattle() {
+
+
+        $.ajax({
+            url: '@Url.Action("StartBattle", "Play")',
+            //url: '/Play/StartBattle',
+            type: 'POST',
+            data: { teamID: 1 },
+            success: function(response) {
+                if (response.success) {
+                    $('#battleArea').show();
+                    $('#playerPokemonInfo').html('Your Pokémon: ' + response.playerPokemon.name);
+                    $('#enemyPokemonInfo').html('Enemy Pokémon: ' + response.enemyPokemon.name);
+                } else {
+                    alert(response.message);
+                }
+            },
+            error: function () {
+                Swal.fire('Error', 'Hubo un problema al iniciar la Batalla', 'error');
+            }
+        });
+        console.log($);
+    }
+
+    function attack() {
+        $.ajax({
+            url: '@Url.Action("Attack", "Play")',
+            type: 'POST',
+            success: function(response) {
+                if (response.success) {
+                    $('#battleResult').html(response.message);
+                    if (response.gameOver) {
+                        $('#battleArea').hide();
+                        alert(response.winner + ' wins!');
+                    }
+                } else {
+                    alert('Error during attack.');
+                }
+            },
+            error: function() {
+                alert('Error during attack.');
+            }
+        });
+    }
+
+    function flee() {
+        $.ajax({
+            url: '@Url.Action("Flee", "Play")',
+            type: 'POST',
+            success: function(response) {
+                if (response.success) {
+                    $('#battleResult').html('You fled! You lose the battle.');
+                    $('#battleArea').hide();
+                } else {
+                    alert('Error fleeing.');
+                }
+            },
+            error: function() {
+                alert('Error fleeing.');
+            }
+        });
+    }
+</script>

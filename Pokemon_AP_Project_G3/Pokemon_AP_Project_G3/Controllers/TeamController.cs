@@ -26,19 +26,21 @@ namespace Pokemon_AP_Project_G3.Controllers
             var pokedex = new List<PokedexQuery>();
             var pokemonsNO = new List<Pokemon>();
 
-            var resTeams = await _service.GetTeamsByUserId(1);
+            var userID = Convert.ToInt32(Request.Cookies["UserID"].Value);
+
+            var resTeams = await _service.GetTeamsByUserId(userID);
             if (resTeams.Success)
                 teams = resTeams.List ?? new List<TeamQuery>(); 
             else
                 ViewBag.Teams = new List<TeamQuery>(); 
 
-            var resPokedex = await _service.GetPokedexByUserId(1);
+            var resPokedex = await _service.GetPokedexByUserId(userID);
             if (resPokedex.Success)
                 pokedex = resPokedex.List ?? new List<PokedexQuery>();
             else
                 pokedex = new List<PokedexQuery>();
 
-            var resPokemonsNO = await _service.GetPokemonsNotOwned(1);
+            var resPokemonsNO = await _service.GetPokemonsNotOwned(userID);
             if (resPokemonsNO.Success)
                 pokemonsNO = resPokemonsNO.List ?? new List<Pokemon>();
             else
@@ -57,12 +59,15 @@ namespace Pokemon_AP_Project_G3.Controllers
         [HttpPost]
         public async Task<ActionResult> AddPokemonsToPokedex(List<int> pokemons)
         {
+            var userID = Convert.ToInt32(Request.Cookies["UserID"].Value);
+
+
             if (pokemons == null || pokemons.Count == 0)
             {
                 return Json(new { success = false, message = "No Pokémon selected" });
             }
 
-            var res = await _service.AddPokemonsToPokedex(pokemons, 1);
+            var res = await _service.AddPokemonsToPokedex(pokemons, userID);
 
             if (res.Success)
             {
@@ -75,12 +80,15 @@ namespace Pokemon_AP_Project_G3.Controllers
         [HttpPost]
         public async Task<ActionResult> DeletePokemon(int pokemonId)
         {
+            var userID = Convert.ToInt32(Request.Cookies["UserID"].Value);
+
+
             if (pokemonId == null || pokemonId == 0)
             {
                 return Json(new { success = false, message = "No Pokémon selected" });
             }
 
-            var res = await _service.DeletePokemonsToPokedex(pokemonId, 1);
+            var res = await _service.DeletePokemonsToPokedex(pokemonId, userID);
 
             if (res.Success)
             {
@@ -116,12 +124,14 @@ namespace Pokemon_AP_Project_G3.Controllers
         [HttpPost]
         public async Task<ActionResult> AddEditTeam(List<int> pokemonIds,int teamId)
         {
+            var userID = Convert.ToInt32(Request.Cookies["UserID"].Value);
+
             if (pokemonIds.Count != 6)
             {
                 return Json(new { success = false, message = "El equipo debe tener exactamente 6 Pokémon." });
             }
 
-            var res = await _service.AddEditTeam(pokemonIds, 1, teamId);
+            var res = await _service.AddEditTeam(pokemonIds, userID, teamId);
 
             if (res.Success)
             {
